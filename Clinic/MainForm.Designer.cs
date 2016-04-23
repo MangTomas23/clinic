@@ -28,22 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFirstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,99 +43,40 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblFullname = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnPayment = new System.Windows.Forms.Button();
-            this.btnReferralSheet = new System.Windows.Forms.Button();
-            this.btnConsent = new System.Windows.Forms.Button();
-            this.btnHistory = new System.Windows.Forms.Button();
-            this.btnPrintDataSheet = new System.Windows.Forms.Button();
+            this.ribbon1 = new System.Windows.Forms.Ribbon();
+            this.rbtnLogout = new System.Windows.Forms.RibbonButton();
+            this.ribbonSeparator1 = new System.Windows.Forms.RibbonSeparator();
+            this.rbtnExit = new System.Windows.Forms.RibbonButton();
+            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
+            this.rbtnNew = new System.Windows.Forms.RibbonButton();
+            this.rbtnEdit = new System.Windows.Forms.RibbonButton();
+            this.rbtnDelete = new System.Windows.Forms.RibbonButton();
+            this.ribbonSeparator3 = new System.Windows.Forms.RibbonSeparator();
+            this.ribbonLabel1 = new System.Windows.Forms.RibbonLabel();
+            this.rtxtSearch = new System.Windows.Forms.RibbonTextBox();
+            this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
+            this.rbtnPrintDataSheet = new System.Windows.Forms.RibbonButton();
+            this.rbtnHistory = new System.Windows.Forms.RibbonButton();
+            this.rbtnReferral = new System.Windows.Forms.RibbonButton();
+            this.rbtnConsent = new System.Windows.Forms.RibbonButton();
+            this.rbtnPayment = new System.Windows.Forms.RibbonButton();
+            this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
+            this.rbtnBackup = new System.Windows.Forms.RibbonButton();
+            this.ribbonSeparator2 = new System.Windows.Forms.RibbonSeparator();
+            this.rbtnRestore = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
+            this.rbtnProfile = new System.Windows.Forms.RibbonButton();
+            this.rbtnChangePassword = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
+            this.rbtnSystemUsers = new System.Windows.Forms.RibbonButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.settingsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(959, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logoutToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "&File";
-            // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(109, 6);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.profileToolStripMenuItem,
-            this.accountToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.usersToolStripMenuItem,
-            this.databaseToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // profileToolStripMenuItem
-            // 
-            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.profileToolStripMenuItem.Text = "Profile";
-            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
-            // 
-            // accountToolStripMenuItem
-            // 
-            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.accountToolStripMenuItem.Text = "Change Password";
-            this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(165, 6);
-            // 
-            // usersToolStripMenuItem
-            // 
-            this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.usersToolStripMenuItem.Text = "Users";
-            this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -155,11 +84,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtSearch);
-            this.groupBox1.Controls.Add(this.btnDelete);
-            this.groupBox1.Controls.Add(this.btnEdit);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 37);
+            this.groupBox1.Location = new System.Drawing.Point(10, 197);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(633, 328);
             this.groupBox1.TabIndex = 1;
@@ -187,42 +113,6 @@
             this.txtSearch.TabIndex = 2;
             this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_keyup);
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Image = global::Clinic.Properties.Resources.delete_user_png_image_19896;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(194, 277);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(88, 33);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Image = global::Clinic.Properties.Resources.Edit_user;
-            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(100, 277);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(88, 33);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // button1
-            // 
-            this.button1.Image = global::Clinic.Properties.Resources.user_add;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(6, 277);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 33);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -239,7 +129,7 @@
             this.colLastname,
             this.colAddress});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 21);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(621, 252);
@@ -280,14 +170,9 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.lblFullname);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.btnPayment);
-            this.groupBox2.Controls.Add(this.btnReferralSheet);
-            this.groupBox2.Controls.Add(this.btnConsent);
-            this.groupBox2.Controls.Add(this.btnHistory);
-            this.groupBox2.Controls.Add(this.btnPrintDataSheet);
-            this.groupBox2.Location = new System.Drawing.Point(12, 384);
+            this.groupBox2.Location = new System.Drawing.Point(12, 524);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(935, 278);
+            this.groupBox2.Size = new System.Drawing.Size(935, 110);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Patient\'s Information";
@@ -332,99 +217,205 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Name:";
             // 
-            // btnPayment
+            // ribbon1
             // 
-            this.btnPayment.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnPayment.Location = new System.Drawing.Point(576, 107);
-            this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(105, 84);
-            this.btnPayment.TabIndex = 5;
-            this.btnPayment.Text = "Payment";
-            this.btnPayment.UseVisualStyleBackColor = true;
-            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
+            this.ribbon1.BackColor = System.Drawing.SystemColors.Window;
+            this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ribbon1.Location = new System.Drawing.Point(0, 0);
+            this.ribbon1.Minimized = false;
+            this.ribbon1.Name = "ribbon1";
             // 
-            // btnReferralSheet
             // 
-            this.btnReferralSheet.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnReferralSheet.Location = new System.Drawing.Point(330, 107);
-            this.btnReferralSheet.Name = "btnReferralSheet";
-            this.btnReferralSheet.Size = new System.Drawing.Size(105, 84);
-            this.btnReferralSheet.TabIndex = 5;
-            this.btnReferralSheet.Text = "Referral Sheet";
-            this.btnReferralSheet.UseVisualStyleBackColor = true;
-            this.btnReferralSheet.Click += new System.EventHandler(this.btnReferralSheet_Click);
             // 
-            // btnConsent
+            this.ribbon1.OrbDropDown.BorderRoundness = 8;
+            this.ribbon1.OrbDropDown.Location = new System.Drawing.Point(0, 0);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.rbtnLogout);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonSeparator1);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.rbtnExit);
+            this.ribbon1.OrbDropDown.Name = "";
+            this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 163);
+            this.ribbon1.OrbDropDown.TabIndex = 0;
+            this.ribbon1.OrbImage = null;
+            this.ribbon1.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013;
+            this.ribbon1.OrbText = "File";
+            this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
+            this.ribbon1.Size = new System.Drawing.Size(959, 161);
+            this.ribbon1.TabIndex = 7;
+            this.ribbon1.Tabs.Add(this.ribbonTab1);
+            this.ribbon1.Tabs.Add(this.ribbonTab2);
+            this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
+            this.ribbon1.Text = "ribbon1";
+            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
             // 
-            this.btnConsent.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnConsent.Location = new System.Drawing.Point(456, 107);
-            this.btnConsent.Name = "btnConsent";
-            this.btnConsent.Size = new System.Drawing.Size(97, 84);
-            this.btnConsent.TabIndex = 5;
-            this.btnConsent.Text = "Consent for Admisson";
-            this.btnConsent.UseVisualStyleBackColor = true;
-            this.btnConsent.Click += new System.EventHandler(this.btnConsent_Click);
+            // rbtnLogout
             // 
-            // btnHistory
+            this.rbtnLogout.Image = ((System.Drawing.Image)(resources.GetObject("rbtnLogout.Image")));
+            this.rbtnLogout.SmallImage = global::Clinic.Properties.Resources.logout_icon_42404;
+            this.rbtnLogout.Text = "Logout";
             // 
-            this.btnHistory.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnHistory.Image = global::Clinic.Properties.Resources.MedicalHistory;
-            this.btnHistory.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHistory.Location = new System.Drawing.Point(185, 107);
-            this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(121, 84);
-            this.btnHistory.TabIndex = 5;
-            this.btnHistory.Text = "History Record";
-            this.btnHistory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnHistory.UseVisualStyleBackColor = true;
-            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            // rbtnExit
             // 
-            // btnPrintDataSheet
+            this.rbtnExit.AltKey = "x";
+            this.rbtnExit.Image = ((System.Drawing.Image)(resources.GetObject("rbtnExit.Image")));
+            this.rbtnExit.SmallImage = global::Clinic.Properties.Resources.Action_exit_icon;
+            this.rbtnExit.Text = "Exit";
             // 
-            this.btnPrintDataSheet.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnPrintDataSheet.Image = global::Clinic.Properties.Resources._0013_Printer_icon;
-            this.btnPrintDataSheet.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPrintDataSheet.Location = new System.Drawing.Point(40, 107);
-            this.btnPrintDataSheet.Name = "btnPrintDataSheet";
-            this.btnPrintDataSheet.Size = new System.Drawing.Size(121, 84);
-            this.btnPrintDataSheet.TabIndex = 1;
-            this.btnPrintDataSheet.Text = "Print Patient\'s Data Sheet";
-            this.btnPrintDataSheet.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPrintDataSheet.UseVisualStyleBackColor = true;
-            this.btnPrintDataSheet.Click += new System.EventHandler(this.btnPrintDataSheet_Click);
+            // ribbonTab1
+            // 
+            this.ribbonTab1.Panels.Add(this.ribbonPanel1);
+            this.ribbonTab1.Panels.Add(this.ribbonPanel2);
+            this.ribbonTab1.Text = "Patient";
+            // 
+            // ribbonPanel1
+            // 
+            this.ribbonPanel1.Items.Add(this.rbtnNew);
+            this.ribbonPanel1.Items.Add(this.rbtnEdit);
+            this.ribbonPanel1.Items.Add(this.rbtnDelete);
+            this.ribbonPanel1.Items.Add(this.ribbonSeparator3);
+            this.ribbonPanel1.Items.Add(this.ribbonLabel1);
+            this.ribbonPanel1.Items.Add(this.rtxtSearch);
+            this.ribbonPanel1.Text = "Options";
+            // 
+            // rbtnNew
+            // 
+            this.rbtnNew.Image = global::Clinic.Properties.Resources.user_male_add;
+            this.rbtnNew.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnNew.SmallImage")));
+            this.rbtnNew.Text = "New";
+            this.rbtnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // rbtnEdit
+            // 
+            this.rbtnEdit.Image = global::Clinic.Properties.Resources.user_male_edit_icon;
+            this.rbtnEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnEdit.SmallImage")));
+            this.rbtnEdit.Text = "Edit";
+            this.rbtnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // rbtnDelete
+            // 
+            this.rbtnDelete.Image = global::Clinic.Properties.Resources.user_male_remove;
+            this.rbtnDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDelete.SmallImage")));
+            this.rbtnDelete.Text = "Delete";
+            this.rbtnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // ribbonLabel1
+            // 
+            this.ribbonLabel1.Text = "Search Patient:";
+            // 
+            // rtxtSearch
+            // 
+            this.rtxtSearch.Text = "";
+            this.rtxtSearch.TextBoxText = "";
+            this.rtxtSearch.TextBoxWidth = 180;
+            // 
+            // ribbonPanel2
+            // 
+            this.ribbonPanel2.Items.Add(this.rbtnPrintDataSheet);
+            this.ribbonPanel2.Items.Add(this.rbtnHistory);
+            this.ribbonPanel2.Items.Add(this.rbtnReferral);
+            this.ribbonPanel2.Items.Add(this.rbtnConsent);
+            this.ribbonPanel2.Items.Add(this.rbtnPayment);
+            this.ribbonPanel2.Text = "Tasks";
+            // 
+            // rbtnPrintDataSheet
+            // 
+            this.rbtnPrintDataSheet.Image = global::Clinic.Properties.Resources.application_vnd_openxmlformats_officedocument_spreadsheetml1;
+            this.rbtnPrintDataSheet.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnPrintDataSheet.SmallImage")));
+            this.rbtnPrintDataSheet.Text = "Print Patient\'s Data Sheet";
+            this.rbtnPrintDataSheet.Click += new System.EventHandler(this.btnPrintDataSheet_Click);
+            // 
+            // rbtnHistory
+            // 
+            this.rbtnHistory.Image = global::Clinic.Properties.Resources.application_vnd_openxmlformats_officedocument_spreadsheetml1;
+            this.rbtnHistory.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnHistory.SmallImage")));
+            this.rbtnHistory.Text = "History Record";
+            this.rbtnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            // 
+            // rbtnReferral
+            // 
+            this.rbtnReferral.Image = global::Clinic.Properties.Resources.application_vnd_openxmlformats_officedocument_spreadsheetml1;
+            this.rbtnReferral.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnReferral.SmallImage")));
+            this.rbtnReferral.Text = "Referral Sheet";
+            this.rbtnReferral.Click += new System.EventHandler(this.btnReferralSheet_Click);
+            // 
+            // rbtnConsent
+            // 
+            this.rbtnConsent.Image = global::Clinic.Properties.Resources.application_vnd_openxmlformats_officedocument_spreadsheetml1;
+            this.rbtnConsent.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnConsent.SmallImage")));
+            this.rbtnConsent.Text = "Consent for Admission";
+            this.rbtnConsent.Click += new System.EventHandler(this.btnConsent_Click);
+            // 
+            // rbtnPayment
+            // 
+            this.rbtnPayment.Image = global::Clinic.Properties.Resources.application_vnd_openxmlformats_officedocument_spreadsheetml1;
+            this.rbtnPayment.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnPayment.SmallImage")));
+            this.rbtnPayment.Text = "Payment";
+            this.rbtnPayment.Click += new System.EventHandler(this.btnPayment_Click);
+            // 
+            // ribbonTab2
+            // 
+            this.ribbonTab2.Panels.Add(this.ribbonPanel3);
+            this.ribbonTab2.Panels.Add(this.ribbonPanel4);
+            this.ribbonTab2.Panels.Add(this.ribbonPanel5);
+            this.ribbonTab2.Text = "Settings";
+            // 
+            // ribbonPanel3
+            // 
+            this.ribbonPanel3.Items.Add(this.rbtnBackup);
+            this.ribbonPanel3.Items.Add(this.ribbonSeparator2);
+            this.ribbonPanel3.Items.Add(this.rbtnRestore);
+            this.ribbonPanel3.Text = "Database";
+            // 
+            // rbtnBackup
+            // 
+            this.rbtnBackup.Image = global::Clinic.Properties.Resources._1049257;
+            this.rbtnBackup.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnBackup.SmallImage")));
+            this.rbtnBackup.Text = "Backup";
+            // 
+            // rbtnRestore
+            // 
+            this.rbtnRestore.Image = global::Clinic.Properties.Resources.upload_database;
+            this.rbtnRestore.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnRestore.SmallImage")));
+            this.rbtnRestore.Text = "Restore";
+            // 
+            // ribbonPanel4
+            // 
+            this.ribbonPanel4.Items.Add(this.rbtnProfile);
+            this.ribbonPanel4.Items.Add(this.rbtnChangePassword);
+            this.ribbonPanel4.Text = "User";
+            // 
+            // rbtnProfile
+            // 
+            this.rbtnProfile.Image = global::Clinic.Properties.Resources.profileL;
+            this.rbtnProfile.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnProfile.SmallImage")));
+            this.rbtnProfile.Text = "Profile";
+            // 
+            // rbtnChangePassword
+            // 
+            this.rbtnChangePassword.Image = global::Clinic.Properties.Resources.login_logo;
+            this.rbtnChangePassword.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnChangePassword.SmallImage")));
+            this.rbtnChangePassword.Text = "Change Password";
+            // 
+            // ribbonPanel5
+            // 
+            this.ribbonPanel5.Items.Add(this.rbtnSystemUsers);
+            this.ribbonPanel5.Text = "System Users";
+            // 
+            // rbtnSystemUsers
+            // 
+            this.rbtnSystemUsers.Image = global::Clinic.Properties.Resources.IC3697551;
+            this.rbtnSystemUsers.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnSystemUsers.SmallImage")));
+            this.rbtnSystemUsers.Text = "Manage";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Clinic.Properties.Resources.clinic_logo_29223444;
-            this.pictureBox1.Location = new System.Drawing.Point(668, 37);
+            this.pictureBox1.Location = new System.Drawing.Point(651, 203);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(279, 271);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            // 
-            // databaseToolStripMenuItem
-            // 
-            this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backupToolStripMenuItem,
-            this.restoreToolStripMenuItem});
-            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
-            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.databaseToolStripMenuItem.Text = "Database";
-            // 
-            // backupToolStripMenuItem
-            // 
-            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.backupToolStripMenuItem.Text = "Backup";
-            this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
-            // 
-            // restoreToolStripMenuItem
-            // 
-            this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.restoreToolStripMenuItem.Text = "Restore";
             // 
             // MainForm
             // 
@@ -432,17 +423,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(959, 674);
+            this.Controls.Add(this.ribbon1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -450,47 +438,52 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnPrintDataSheet;
-        private System.Windows.Forms.Button btnPayment;
-        private System.Windows.Forms.Button btnReferralSheet;
-        private System.Windows.Forms.Button btnConsent;
-        private System.Windows.Forms.Button btnHistory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFirstname;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMiddlename;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLastname;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAddress;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.Label lblFullname;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem restoreToolStripMenuItem;
+        private System.Windows.Forms.Ribbon ribbon1;
+        private System.Windows.Forms.RibbonTab ribbonTab1;
+        private System.Windows.Forms.RibbonPanel ribbonPanel1;
+        private System.Windows.Forms.RibbonButton rbtnNew;
+        private System.Windows.Forms.RibbonTab ribbonTab2;
+        private System.Windows.Forms.RibbonButton rbtnEdit;
+        private System.Windows.Forms.RibbonButton rbtnDelete;
+        private System.Windows.Forms.RibbonPanel ribbonPanel2;
+        private System.Windows.Forms.RibbonSeparator ribbonSeparator1;
+        private System.Windows.Forms.RibbonButton rbtnExit;
+        private System.Windows.Forms.RibbonPanel ribbonPanel3;
+        private System.Windows.Forms.RibbonButton rbtnBackup;
+        private System.Windows.Forms.RibbonSeparator ribbonSeparator2;
+        private System.Windows.Forms.RibbonButton rbtnRestore;
+        private System.Windows.Forms.RibbonSeparator ribbonSeparator3;
+        private System.Windows.Forms.RibbonLabel ribbonLabel1;
+        private System.Windows.Forms.RibbonTextBox rtxtSearch;
+        private System.Windows.Forms.RibbonButton rbtnPrintDataSheet;
+        private System.Windows.Forms.RibbonButton rbtnHistory;
+        private System.Windows.Forms.RibbonButton rbtnReferral;
+        private System.Windows.Forms.RibbonButton rbtnConsent;
+        private System.Windows.Forms.RibbonButton rbtnPayment;
+        private System.Windows.Forms.RibbonPanel ribbonPanel4;
+        private System.Windows.Forms.RibbonButton rbtnProfile;
+        private System.Windows.Forms.RibbonButton rbtnChangePassword;
+        private System.Windows.Forms.RibbonPanel ribbonPanel5;
+        private System.Windows.Forms.RibbonButton rbtnSystemUsers;
+        private System.Windows.Forms.RibbonButton rbtnLogout;
     }
 }

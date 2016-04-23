@@ -61,6 +61,11 @@
       <HintPath>..\packages\CrystalDecisions.Windows.Forms.1.0.0\lib\CrystalDecisions.Windows.Forms.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="MongoDB.Bson, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MongoDB.Bson.2.2.3\lib\net45\MongoDB.Bson.dll</HintPath>
       <Private>True</Private>
@@ -74,9 +79,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.Ribbon35">
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Binaries\System.Windows.Forms.Ribbon35.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -88,6 +98,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAddBill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,12 +172,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +216,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAddBill.resx">
       <DependentUpon>FrmAddBill.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,9 +253,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PrintPatient.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmChangePassword.resx">
       <DependentUpon>FrmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,6 +275,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReferralSheet.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -349,6 +360,66 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MedicalHistory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_vnd.openxmlformats_officedocument.spreadsheetml.sheet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YPS__file_document_to_sign_signature_signed_sign_sheet_contract_paper_page_text-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_blue.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_can_delete3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gtk_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1049257.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload-database.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profileL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_male_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-male-edit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-male-edit-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_male_remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-icon-42404.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Action-exit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IC369755.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IC3697551.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_vnd.openxmlformats_officedocument.spreadsheetml.sheet1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

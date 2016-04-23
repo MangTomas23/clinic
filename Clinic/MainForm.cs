@@ -61,7 +61,7 @@ namespace Clinic
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnNew_Click(object sender, EventArgs e)
         {
             new FrmNewPatient(this).Show();
         }
@@ -179,6 +179,11 @@ namespace Clinic
         }
 
         private void backupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
