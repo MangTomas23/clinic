@@ -16,5 +16,10 @@ namespace Clinic.Inventory
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -228,5 +228,10 @@ namespace Clinic
                 MessageBox.Show("Operation successful!", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             }
         }
+
+        private void rbtnManageInventory_Click(object sender, EventArgs e)
+        {
+            new Inventory.FrmInventory().ShowDialog();
+        }
     }
 }
