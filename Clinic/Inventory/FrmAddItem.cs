@@ -21,6 +21,12 @@ namespace Clinic.Inventory
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if(txtItem.Text.Trim().Equals("") || txtQuantity.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Please fill up all the fields. ", "Incomplete Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             IMongoCollection<BsonDocument> collection = MainForm.database.GetCollection<BsonDocument>("inventory");
 
             var document = new BsonDocument
