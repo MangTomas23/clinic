@@ -34,12 +34,17 @@
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnPlus = new DevExpress.XtraEditors.SimpleButton();
             this.btnMinus = new DevExpress.XtraEditors.SimpleButton();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv
             // 
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Quantity});
             this.dgv.Location = new System.Drawing.Point(12, 12);
             this.dgv.Name = "dgv";
             this.dgv.Size = new System.Drawing.Size(693, 259);
@@ -86,6 +91,16 @@
             this.btnMinus.TabIndex = 3;
             this.btnMinus.Text = "-";
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Item";
+            this.Column1.Name = "Column1";
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            // 
             // FrmInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,5 +127,7 @@
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnPlus;
         private DevExpress.XtraEditors.SimpleButton btnMinus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
     }
 }
