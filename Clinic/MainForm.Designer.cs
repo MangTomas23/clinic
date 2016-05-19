@@ -79,6 +79,9 @@
             this.rbtnSystemUsers = new System.Windows.Forms.RibbonButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dashboardBarController1 = new DevExpress.DashboardWin.Bars.DashboardBarController();
+            this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
+            this.rbtnManageInventory = new System.Windows.Forms.RibbonButton();
+            this.rbtnPrintInventory = new System.Windows.Forms.RibbonButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -376,6 +379,7 @@
             // 
             this.ribbonTab1.Panels.Add(this.ribbonPanel1);
             this.ribbonTab1.Panels.Add(this.ribbonPanel2);
+            this.ribbonTab1.Panels.Add(this.ribbonPanel6);
             this.ribbonTab1.Text = "Home";
             // 
             // ribbonPanel1
@@ -521,6 +525,24 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // ribbonPanel6
+            // 
+            this.ribbonPanel6.Items.Add(this.rbtnManageInventory);
+            this.ribbonPanel6.Items.Add(this.rbtnPrintInventory);
+            this.ribbonPanel6.Text = "Inventory";
+            // 
+            // rbtnManageInventory
+            // 
+            this.rbtnManageInventory.Image = ((System.Drawing.Image)(resources.GetObject("rbtnManageInventory.Image")));
+            this.rbtnManageInventory.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnManageInventory.SmallImage")));
+            this.rbtnManageInventory.Text = "Manage Inventory";
+            // 
+            // rbtnPrintInventory
+            // 
+            this.rbtnPrintInventory.Image = ((System.Drawing.Image)(resources.GetObject("rbtnPrintInventory.Image")));
+            this.rbtnPrintInventory.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnPrintInventory.SmallImage")));
+            this.rbtnPrintInventory.Text = "Print Inventory";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -598,5 +620,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblNationality;
+        private System.Windows.Forms.RibbonPanel ribbonPanel6;
+        private System.Windows.Forms.RibbonButton rbtnManageInventory;
+        private System.Windows.Forms.RibbonButton rbtnPrintInventory;
     }
 }
