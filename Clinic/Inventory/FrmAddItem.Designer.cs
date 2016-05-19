@@ -49,7 +49,7 @@
             this.btnAdd.Location = new System.Drawing.Point(204, 121);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 1;
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -76,10 +76,11 @@
             this.txtQuantity.Location = new System.Drawing.Point(15, 84);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(264, 20);
-            this.txtQuantity.TabIndex = 0;
+            this.txtQuantity.TabIndex = 1;
             // 
             // FrmAddItem
             // 
+            this.AcceptButton = this.btnAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(293, 156);
