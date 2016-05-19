@@ -76,6 +76,7 @@
             this.btnDelete.Size = new System.Drawing.Size(115, 23);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnPlus
             // 
@@ -97,6 +98,7 @@
             // 
             this.Column2.HeaderText = "_id";
             this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
             // 
             // Column1
             // 
