@@ -376,14 +376,14 @@
             // 
             this.ribbonTab1.Panels.Add(this.ribbonPanel1);
             this.ribbonTab1.Panels.Add(this.ribbonPanel2);
-            this.ribbonTab1.Text = "Patient";
+            this.ribbonTab1.Text = "Home";
             // 
             // ribbonPanel1
             // 
             this.ribbonPanel1.Items.Add(this.rbtnNew);
             this.ribbonPanel1.Items.Add(this.rbtnEdit);
             this.ribbonPanel1.Items.Add(this.rbtnDelete);
-            this.ribbonPanel1.Text = "Options";
+            this.ribbonPanel1.Text = "Patient";
             // 
             // rbtnNew
             // 
