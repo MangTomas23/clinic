@@ -41,7 +41,7 @@ namespace Clinic
                 txtLastname.Text = r["lastname"].ToString();
                 cboSex.SelectedItem = r["sex"].ToString();
                 txtAge.Text = r["age"].ToString();
-                dtpBirthdate.Value = DateTime.Parse(r["birthdate"].ToString());
+                dtpBirthdate.Value = DateTime.Parse(r["birthdate"].ToString(), null, System.Globalization.DateTimeStyles.RoundtripKind);
                 txtBirthplace.Text = r["birthplace"].ToString();
                 cboCivilStatus.SelectedItem = r["civil_status"].ToString();
                 txtAddress.Text = r["address"].ToString();
@@ -189,6 +189,7 @@ namespace Clinic
                 this.Hide();
             }catch(Exception ex)
             {
+                MessageBox.Show("Update failed. Please make sure to fill up all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine(ex.ToString());
             }
 

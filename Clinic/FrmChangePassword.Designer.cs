@@ -31,12 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtOldPassword = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNewPassword = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtConfirm = new System.Windows.Forms.TextBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtNewPassword = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnCancel);
-            this.groupBox1.Controls.Add(this.btnSubmit);
+            this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.txtConfirm);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtNewPassword);
@@ -75,23 +75,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Change Password";
             // 
-            // label2
+            // txtConfirm
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "New Password";
-            // 
-            // txtNewPassword
-            // 
-            this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPassword.Location = new System.Drawing.Point(36, 96);
-            this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.PasswordChar = '*';
-            this.txtNewPassword.Size = new System.Drawing.Size(229, 29);
-            this.txtNewPassword.TabIndex = 1;
+            this.txtConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirm.Location = new System.Drawing.Point(36, 144);
+            this.txtConfirm.Name = "txtConfirm";
+            this.txtConfirm.PasswordChar = '*';
+            this.txtConfirm.Size = new System.Drawing.Size(229, 29);
+            this.txtConfirm.TabIndex = 2;
             // 
             // label3
             // 
@@ -102,40 +93,49 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Confirm";
             // 
-            // txtConfirm
+            // txtNewPassword
             // 
-            this.txtConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirm.Location = new System.Drawing.Point(36, 144);
-            this.txtConfirm.Name = "txtConfirm";
-            this.txtConfirm.PasswordChar = '*';
-            this.txtConfirm.Size = new System.Drawing.Size(229, 29);
-            this.txtConfirm.TabIndex = 2;
+            this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPassword.Location = new System.Drawing.Point(36, 96);
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.PasswordChar = '*';
+            this.txtNewPassword.Size = new System.Drawing.Size(229, 29);
+            this.txtNewPassword.TabIndex = 1;
             // 
-            // btnSubmit
+            // label2
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(151, 178);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(54, 22);
-            this.btnSubmit.TabIndex = 3;
-            this.btnSubmit.Text = "&Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(33, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "New Password";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(158, 183);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "&Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(91, 179);
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(77, 183);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(54, 22);
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "&Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FrmChangePassword
             // 
-            this.AcceptButton = this.btnSubmit;
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(328, 236);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -154,11 +154,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtOldPassword;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNewPassword;
         private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
     }
 }

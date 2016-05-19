@@ -37,14 +37,14 @@
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtGeneralData = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnPrevious = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
             this.lblHistoryNumber = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnNext = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,16 +138,6 @@
             this.txtGeneralData.Size = new System.Drawing.Size(684, 143);
             this.txtGeneralData.TabIndex = 5;
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(348, 338);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "&Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(267, 338);
@@ -188,16 +178,6 @@
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(621, 338);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 6;
-            this.btnNext.Text = "&Next";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
             // lblHistoryNumber
             // 
             this.lblHistoryNumber.AutoSize = true;
@@ -217,18 +197,36 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(607, 338);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(89, 23);
+            this.btnNext.TabIndex = 8;
+            this.btnNext.Text = "Next";
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(348, 338);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(89, 23);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // FrmHistoryRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(708, 368);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.lblHistoryNumber);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtGeneralData);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
@@ -255,13 +253,13 @@
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtGeneralData;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnPrevious;
-        private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lblHistoryNumber;
         private System.Windows.Forms.Button btnDelete;
+        private DevExpress.XtraEditors.SimpleButton btnNext;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
     }
 }

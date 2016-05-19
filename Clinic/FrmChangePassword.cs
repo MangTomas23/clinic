@@ -19,7 +19,6 @@ namespace Clinic
         {
             InitializeComponent();
             this.frmMain = frmMain;
-            MessageBox.Show(frmMain.getUser());
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

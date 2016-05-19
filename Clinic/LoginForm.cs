@@ -55,5 +55,10 @@ namespace Clinic
                 txtPassword.Focus();
             }
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

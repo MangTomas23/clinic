@@ -143,6 +143,16 @@ namespace Clinic.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clinic_xxl {
+            get {
+                object obj = ResourceManager.GetObject("clinic_xxl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete_user_png_image_19896 {
             get {
                 object obj = ResourceManager.GetObject("delete-user-png-image-19896", resourceCulture);

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.txtSearch = new DevExpress.XtraEditors.TextEdit();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFirstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,22 +39,28 @@
             this.colLastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblNationality = new System.Windows.Forms.Label();
+            this.lblHistoryRecord = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblCivilStatus = new System.Windows.Forms.Label();
+            this.lblSex = new System.Windows.Forms.Label();
             this.lblFullname = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.rbtnLogout = new System.Windows.Forms.RibbonButton();
             this.ribbonSeparator1 = new System.Windows.Forms.RibbonSeparator();
             this.rbtnExit = new System.Windows.Forms.RibbonButton();
+            this.ribbonOrbRecentItem1 = new System.Windows.Forms.RibbonOrbRecentItem();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
             this.rbtnNew = new System.Windows.Forms.RibbonButton();
             this.rbtnEdit = new System.Windows.Forms.RibbonButton();
             this.rbtnDelete = new System.Windows.Forms.RibbonButton();
-            this.ribbonSeparator3 = new System.Windows.Forms.RibbonSeparator();
-            this.ribbonLabel1 = new System.Windows.Forms.RibbonLabel();
-            this.rtxtSearch = new System.Windows.Forms.RibbonTextBox();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.rbtnPrintDataSheet = new System.Windows.Forms.RibbonButton();
             this.rbtnHistory = new System.Windows.Forms.RibbonButton();
@@ -72,10 +78,13 @@
             this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
             this.rbtnSystemUsers = new System.Windows.Forms.RibbonButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dashboardBarController1 = new DevExpress.DashboardWin.Bars.DashboardBarController();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardBarController1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -85,7 +94,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(10, 197);
+            this.groupBox1.Location = new System.Drawing.Point(12, 165);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(633, 328);
             this.groupBox1.TabIndex = 1;
@@ -96,22 +105,22 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(334, 287);
+            this.label1.Location = new System.Drawing.Point(375, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 2;
             this.label1.Text = "Search";
             // 
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(381, 280);
+            this.txtSearch.EditValue = "";
+            this.txtSearch.Location = new System.Drawing.Point(422, 19);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(246, 26);
-            this.txtSearch.TabIndex = 2;
-            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_keyup);
+            this.txtSearch.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtSearch.Size = new System.Drawing.Size(205, 20);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textEdit1_KeyUp);
             // 
             // dataGridView1
             // 
@@ -129,7 +138,7 @@
             this.colLastname,
             this.colAddress});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 21);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 50);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(621, 252);
@@ -166,16 +175,64 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.lblNationality);
+            this.groupBox2.Controls.Add(this.lblHistoryRecord);
             this.groupBox2.Controls.Add(this.lblAddress);
             this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.lblCivilStatus);
+            this.groupBox2.Controls.Add(this.lblSex);
             this.groupBox2.Controls.Add(this.lblFullname);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(12, 524);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(935, 110);
+            this.groupBox2.Size = new System.Drawing.Size(935, 157);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Patient\'s Information";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 79);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 16);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Nationality:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 106);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 16);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "History Record: ";
+            // 
+            // lblNationality
+            // 
+            this.lblNationality.AutoSize = true;
+            this.lblNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNationality.Location = new System.Drawing.Point(86, 79);
+            this.lblNationality.Name = "lblNationality";
+            this.lblNationality.Size = new System.Drawing.Size(68, 16);
+            this.lblNationality.TabIndex = 6;
+            this.lblNationality.Text = "               ";
+            // 
+            // lblHistoryRecord
+            // 
+            this.lblHistoryRecord.AutoSize = true;
+            this.lblHistoryRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistoryRecord.Location = new System.Drawing.Point(116, 106);
+            this.lblHistoryRecord.Name = "lblHistoryRecord";
+            this.lblHistoryRecord.Size = new System.Drawing.Size(68, 16);
+            this.lblHistoryRecord.TabIndex = 6;
+            this.lblHistoryRecord.Text = "               ";
             // 
             // lblAddress
             // 
@@ -197,6 +254,28 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Address:";
             // 
+            // lblCivilStatus
+            // 
+            this.lblCivilStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCivilStatus.AutoSize = true;
+            this.lblCivilStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCivilStatus.Location = new System.Drawing.Point(694, 53);
+            this.lblCivilStatus.Name = "lblCivilStatus";
+            this.lblCivilStatus.Size = new System.Drawing.Size(85, 16);
+            this.lblCivilStatus.TabIndex = 6;
+            this.lblCivilStatus.Text = "Civil Status";
+            // 
+            // lblSex
+            // 
+            this.lblSex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSex.AutoSize = true;
+            this.lblSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSex.Location = new System.Drawing.Point(652, 27);
+            this.lblSex.Name = "lblSex";
+            this.lblSex.Size = new System.Drawing.Size(34, 16);
+            this.lblSex.TabIndex = 6;
+            this.lblSex.Text = "Sex";
+            // 
             // lblFullname
             // 
             this.lblFullname.AutoSize = true;
@@ -206,6 +285,28 @@
             this.lblFullname.Size = new System.Drawing.Size(53, 16);
             this.lblFullname.TabIndex = 6;
             this.lblFullname.Text = "Name:";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(612, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 16);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Civil Status:";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(612, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 16);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Sex:";
             // 
             // label2
             // 
@@ -220,6 +321,7 @@
             // ribbon1
             // 
             this.ribbon1.BackColor = System.Drawing.SystemColors.Window;
+            this.ribbon1.CaptionBarVisible = false;
             this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ribbon1.Location = new System.Drawing.Point(0, 0);
             this.ribbon1.Minimized = false;
@@ -233,25 +335,28 @@
             this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonSeparator1);
             this.ribbon1.OrbDropDown.MenuItems.Add(this.rbtnExit);
             this.ribbon1.OrbDropDown.Name = "";
-            this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 163);
+            this.ribbon1.OrbDropDown.OptionItemsPadding = 0;
+            this.ribbon1.OrbDropDown.RecentItems.Add(this.ribbonOrbRecentItem1);
+            this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(160, 163);
             this.ribbon1.OrbDropDown.TabIndex = 0;
             this.ribbon1.OrbImage = null;
             this.ribbon1.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013;
             this.ribbon1.OrbText = "File";
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.ribbon1.Size = new System.Drawing.Size(959, 161);
+            this.ribbon1.Size = new System.Drawing.Size(959, 149);
             this.ribbon1.TabIndex = 7;
             this.ribbon1.Tabs.Add(this.ribbonTab1);
             this.ribbon1.Tabs.Add(this.ribbonTab2);
-            this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
+            this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 2, 20, 0);
             this.ribbon1.Text = "ribbon1";
-            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
+            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Black;
             // 
             // rbtnLogout
             // 
             this.rbtnLogout.Image = ((System.Drawing.Image)(resources.GetObject("rbtnLogout.Image")));
             this.rbtnLogout.SmallImage = global::Clinic.Properties.Resources.logout_icon_42404;
             this.rbtnLogout.Text = "Logout";
+            this.rbtnLogout.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // rbtnExit
             // 
@@ -259,6 +364,13 @@
             this.rbtnExit.Image = ((System.Drawing.Image)(resources.GetObject("rbtnExit.Image")));
             this.rbtnExit.SmallImage = global::Clinic.Properties.Resources.Action_exit_icon;
             this.rbtnExit.Text = "Exit";
+            this.rbtnExit.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // ribbonOrbRecentItem1
+            // 
+            this.ribbonOrbRecentItem1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem1.Image")));
+            this.ribbonOrbRecentItem1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem1.SmallImage")));
+            this.ribbonOrbRecentItem1.Text = "ribbonOrbRecentItem1";
             // 
             // ribbonTab1
             // 
@@ -271,9 +383,6 @@
             this.ribbonPanel1.Items.Add(this.rbtnNew);
             this.ribbonPanel1.Items.Add(this.rbtnEdit);
             this.ribbonPanel1.Items.Add(this.rbtnDelete);
-            this.ribbonPanel1.Items.Add(this.ribbonSeparator3);
-            this.ribbonPanel1.Items.Add(this.ribbonLabel1);
-            this.ribbonPanel1.Items.Add(this.rtxtSearch);
             this.ribbonPanel1.Text = "Options";
             // 
             // rbtnNew
@@ -296,16 +405,6 @@
             this.rbtnDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnDelete.SmallImage")));
             this.rbtnDelete.Text = "Delete";
             this.rbtnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // ribbonLabel1
-            // 
-            this.ribbonLabel1.Text = "Search Patient:";
-            // 
-            // rtxtSearch
-            // 
-            this.rtxtSearch.Text = "";
-            this.rtxtSearch.TextBoxText = "";
-            this.rtxtSearch.TextBoxWidth = 180;
             // 
             // ribbonPanel2
             // 
@@ -370,12 +469,14 @@
             this.rbtnBackup.Image = global::Clinic.Properties.Resources._1049257;
             this.rbtnBackup.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnBackup.SmallImage")));
             this.rbtnBackup.Text = "Backup";
+            this.rbtnBackup.Click += new System.EventHandler(this.rbtnBackup_Click);
             // 
             // rbtnRestore
             // 
             this.rbtnRestore.Image = global::Clinic.Properties.Resources.upload_database;
             this.rbtnRestore.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnRestore.SmallImage")));
             this.rbtnRestore.Text = "Restore";
+            this.rbtnRestore.Click += new System.EventHandler(this.rbtnRestore_Click);
             // 
             // ribbonPanel4
             // 
@@ -388,12 +489,14 @@
             this.rbtnProfile.Image = global::Clinic.Properties.Resources.profileL;
             this.rbtnProfile.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnProfile.SmallImage")));
             this.rbtnProfile.Text = "Profile";
+            this.rbtnProfile.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
             // rbtnChangePassword
             // 
             this.rbtnChangePassword.Image = global::Clinic.Properties.Resources.login_logo;
             this.rbtnChangePassword.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnChangePassword.SmallImage")));
             this.rbtnChangePassword.Text = "Change Password";
+            this.rbtnChangePassword.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
             // 
             // ribbonPanel5
             // 
@@ -405,6 +508,7 @@
             this.rbtnSystemUsers.Image = global::Clinic.Properties.Resources.IC3697551;
             this.rbtnSystemUsers.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnSystemUsers.SmallImage")));
             this.rbtnSystemUsers.Text = "Manage";
+            this.rbtnSystemUsers.Click += new System.EventHandler(this.rbtnSystemUsers_Click);
             // 
             // pictureBox1
             // 
@@ -422,7 +526,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(959, 674);
+            this.ClientSize = new System.Drawing.Size(959, 693);
             this.Controls.Add(this.ribbon1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
@@ -433,10 +537,12 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardBarController1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -444,8 +550,6 @@
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFirstname;
@@ -468,12 +572,8 @@
         private System.Windows.Forms.RibbonSeparator ribbonSeparator1;
         private System.Windows.Forms.RibbonButton rbtnExit;
         private System.Windows.Forms.RibbonPanel ribbonPanel3;
-        private System.Windows.Forms.RibbonButton rbtnBackup;
         private System.Windows.Forms.RibbonSeparator ribbonSeparator2;
         private System.Windows.Forms.RibbonButton rbtnRestore;
-        private System.Windows.Forms.RibbonSeparator ribbonSeparator3;
-        private System.Windows.Forms.RibbonLabel ribbonLabel1;
-        private System.Windows.Forms.RibbonTextBox rtxtSearch;
         private System.Windows.Forms.RibbonButton rbtnPrintDataSheet;
         private System.Windows.Forms.RibbonButton rbtnHistory;
         private System.Windows.Forms.RibbonButton rbtnReferral;
@@ -485,5 +585,18 @@
         private System.Windows.Forms.RibbonPanel ribbonPanel5;
         private System.Windows.Forms.RibbonButton rbtnSystemUsers;
         private System.Windows.Forms.RibbonButton rbtnLogout;
+        private System.Windows.Forms.RibbonOrbRecentItem ribbonOrbRecentItem1;
+        private DevExpress.DashboardWin.Bars.DashboardBarController dashboardBarController1;
+        private DevExpress.XtraEditors.TextEdit txtSearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblHistoryRecord;
+        private System.Windows.Forms.RibbonButton rbtnBackup;
+        private System.Windows.Forms.Label lblCivilStatus;
+        private System.Windows.Forms.Label lblSex;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblNationality;
     }
 }

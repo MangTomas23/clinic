@@ -37,6 +37,7 @@ namespace Clinic
 
         public void fillPatientsList()
         {
+            
             DataGridView dv = dataGridView1;
             dv.Rows.Clear();
             
@@ -68,11 +69,6 @@ namespace Clinic
 
 
 
-        private void txtSearch_keyup(object sender, KeyEventArgs e)
-        {
-            fillPatientsList();
-        }
-
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             try {
@@ -83,6 +79,10 @@ namespace Clinic
                 lblFullname.Text = r["firstname"].ToString() + " " +
                     r["middlename"].ToString() + " " + r["lastname"].ToString();
                 lblAddress.Text = r["address"].ToString();
+                lblCivilStatus.Text = r["civil_status"].ToString();
+                lblSex.Text = r["sex"].ToString();
+                lblNationality.Text = r["nationality"].ToString();
+                lblHistoryRecord.Text = r["history"].AsBsonArray.Count.ToString();
             }
             catch (Exception ex)
             {
@@ -153,12 +153,7 @@ namespace Clinic
             string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             new Print.FrmPrintDataSheet(id).ShowDialog();
         }
-
-        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new FrmUsers().ShowDialog();
-        }
-
+        
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmProfile(getUser()).ShowDialog();
@@ -182,10 +177,56 @@ namespace Clinic
         {
 
         }
+        
 
-        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void rtxtSearch_TextBoxTextChanged(object sender, EventArgs e)
         {
+            fillPatientsList();
+        }
 
+        private void ribbonTextBox1_TextBoxKeyPress(object sender, KeyPressEventArgs e)
+        {
+            fillPatientsList();
+        }
+
+        private void textEdit1_KeyUp(object sender, KeyEventArgs e)
+        {
+            fillPatientsList();
+        }
+
+        private void rbtnSystemUsers_Click(object sender, EventArgs e)
+        {
+            new FrmUsers().ShowDialog();
+        }
+
+        private void rbtnBackup_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C mongodump --db \"clinic\" --out c:/backup";
+            process.StartInfo = startInfo;
+            process.Start();
+
+            MessageBox.Show("Operation Successful!\nBackup Location: c:\\backup", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void rbtnRestore_Click(object sender, EventArgs e)
+        {
+            DialogResult = MessageBox.Show("Are you sure you want to restore database from last backup?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if(DialogResult.Equals(DialogResult.Yes))
+            {
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "/C mongorestore --db clinic --dir c:/backup/clinic";
+                process.StartInfo = startInfo;
+                process.Start();
+                MessageBox.Show("Operation successful!", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            }
         }
     }
 }
