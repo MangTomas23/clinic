@@ -199,6 +199,12 @@
     <Compile Include="Inventory\FrmInventory.Designer.cs">
       <DependentUpon>FrmInventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventory\FrmQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\FrmQuantity.Designer.cs">
+      <DependentUpon>FrmQuantity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Print\Bill.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -307,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory\FrmInventory.resx">
       <DependentUpon>FrmInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\FrmQuantity.resx">
+      <DependentUpon>FrmQuantity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Print\Bill.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
