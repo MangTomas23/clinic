@@ -16,5 +16,11 @@ namespace Clinic
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            txtItem.ReadOnly = false;
+            txtAmount.ReadOnly = false;
+        }
     }
 }
