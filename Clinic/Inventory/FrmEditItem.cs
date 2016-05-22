@@ -36,6 +36,22 @@ namespace Clinic.Inventory
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if(txtQuantity.Text.Trim() == "" || txtQuantity.Text.Trim() == "")
+            {
+                MessageBox.Show("Please fill up all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try {
+                Int32.Parse(txtQuantity.Text);
+            }catch(System.FormatException ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("Please enter a valid integer", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtQuantity.Focus();
+                txtQuantity.SelectAll();
+                return;
+            }
             var update = Builders<BsonDocument>.Update
                 .Set("item", txtItem.Text)
                 .Set("quantity", txtQuantity.Text);
