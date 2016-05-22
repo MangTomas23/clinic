@@ -52,14 +52,16 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 11;
-            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Text = "Add";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtQuantity
             // 
             this.txtQuantity.Location = new System.Drawing.Point(12, 81);
             this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Properties.MaxLength = 5;
             this.txtQuantity.Size = new System.Drawing.Size(264, 20);
-            this.txtQuantity.TabIndex = 9;
+            this.txtQuantity.TabIndex = 1;
             // 
             // label1
             // 
@@ -77,9 +79,11 @@
             this.txtItem.Properties.ReadOnly = true;
             this.txtItem.Size = new System.Drawing.Size(264, 20);
             this.txtItem.TabIndex = 9;
+            this.txtItem.TabStop = false;
             // 
             // FrmQuantity
             // 
+            this.AcceptButton = this.btnUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(295, 154);

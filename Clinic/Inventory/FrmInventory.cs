@@ -66,5 +66,22 @@ namespace Clinic.Inventory
             string id = dgv.SelectedRows[0].Cells[0].Value.ToString();
             new FrmEditItem(id, this).ShowDialog();
         }
+
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            showQuantityForm(FrmQuantity.Operation.ADD);
+
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            showQuantityForm(FrmQuantity.Operation.SUBTRACT);
+        }
+
+        private void showQuantityForm(FrmQuantity.Operation operation)
+        {
+            string id = dgv.SelectedRows[0].Cells[0].Value.ToString();
+            new FrmQuantity(id, this, operation).ShowDialog();
+        }
     }
 }
