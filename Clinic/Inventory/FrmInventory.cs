@@ -60,5 +60,11 @@ namespace Clinic.Inventory
             collection.DeleteOne(filter);
             loadInventory();
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            string id = dgv.SelectedRows[0].Cells[0].Value.ToString();
+            new FrmEditItem(id).ShowDialog();
+        }
     }
 }

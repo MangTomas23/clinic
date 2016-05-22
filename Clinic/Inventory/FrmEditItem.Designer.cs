@@ -30,7 +30,7 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.txtQuantity = new DevExpress.XtraEditors.TextEdit();
             this.txtItem = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuantity.Properties)).BeginInit();
@@ -55,13 +55,14 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Item";
             // 
-            // simpleButton1
+            // btnUpdate
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(208, 118);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 8;
-            this.simpleButton1.Text = "Add";
+            this.btnUpdate.Location = new System.Drawing.Point(208, 118);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtQuantity
             // 
@@ -84,7 +85,7 @@
             this.ClientSize = new System.Drawing.Size(296, 162);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.txtItem);
             this.Name = "FrmEditItem";
@@ -100,7 +101,7 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private DevExpress.XtraEditors.TextEdit txtQuantity;
         private DevExpress.XtraEditors.TextEdit txtItem;
     }
