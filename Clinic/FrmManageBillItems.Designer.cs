@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,9 +73,9 @@
             // 
             // Column2
             // 
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column2.HeaderText = "Amount";
             this.Column2.Name = "Column2";
             // 
@@ -103,7 +103,7 @@
             this.txtItem.Name = "txtItem";
             this.txtItem.Properties.ReadOnly = true;
             this.txtItem.Size = new System.Drawing.Size(394, 20);
-            this.txtItem.TabIndex = 4;
+            this.txtItem.TabIndex = 1;
             // 
             // label1
             // 
@@ -120,7 +120,7 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Properties.ReadOnly = true;
             this.txtAmount.Size = new System.Drawing.Size(173, 20);
-            this.txtAmount.TabIndex = 7;
+            this.txtAmount.TabIndex = 2;
             // 
             // groupBox1
             // 
