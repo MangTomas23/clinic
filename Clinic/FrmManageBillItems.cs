@@ -43,6 +43,7 @@ namespace Clinic
         {
             txtItem.ReadOnly = false;
             txtAmount.ReadOnly = false;
+            btnSave.Enabled = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
