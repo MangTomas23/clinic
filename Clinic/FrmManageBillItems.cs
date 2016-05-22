@@ -69,5 +69,19 @@ namespace Clinic
             btnSave.Enabled = false;
             loadItems();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult confirmation = MessageBox.Show("Are you sure you want to delete this item?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(confirmation.Equals(DialogResult.No))
+            {
+                return;
+            }
+
+            ObjectId id = ObjectId.Parse(dgv.SelectedRows[0].Cells[0].Value.ToString());
+            FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("_id", id);
+            collection.DeleteOne(filter);
+            loadItems();
+        }
     }
 }
