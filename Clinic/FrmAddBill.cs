@@ -42,8 +42,8 @@ namespace Clinic
             dv1[0, i].Value = txtItem.Text;
 
             txtItem.Focus();
-            txtItem.Clear();
-            txtAmount.Clear();
+            txtItem.Text = "";
+            txtAmount.Text = "";
 
             computeTotal();
         }
