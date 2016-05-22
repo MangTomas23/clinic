@@ -47,7 +47,7 @@ namespace Clinic
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(txtItem.Text.Trim() == "" || txtAmount.Text.Trim() == "")
+            if (txtItem.Text.Trim() == "" || txtAmount.Text.Trim() == "")
             {
                 MessageBox.Show("Please fill up all the fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -60,6 +60,10 @@ namespace Clinic
             };
 
             collection.InsertOne(document);
+
+            txtItem.Text = "";
+            txtAmount.Text = "";
+            loadItems();
         }
     }
 }
