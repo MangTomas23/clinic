@@ -39,10 +39,10 @@ namespace Clinic
 
             int i = dv1.Rows.Add();
             dv1[1, i].Value = amount;
-            dv1[0, i].Value = txtItem.Text;
+            dv1[0, i].Value = cbItem.Text;
 
-            txtItem.Focus();
-            txtItem.Text = "";
+            cbItem.Focus();
+            cbItem.Text = "";
             txtAmount.Text = "";
 
             computeTotal();
