@@ -38,9 +38,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtAmount = new DevExpress.XtraEditors.TextEdit();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).BeginInit();
@@ -135,29 +135,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add / Update";
             // 
-            // simpleButton1
+            // btnAdd
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(11, 193);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 8;
-            this.simpleButton1.Text = "&Add";
+            this.btnAdd.Location = new System.Drawing.Point(11, 193);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 8;
+            this.btnAdd.Text = "&Add";
             // 
-            // simpleButton2
+            // btnEdit
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(92, 193);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 8;
-            this.simpleButton2.Text = "&Edit";
+            this.btnEdit.Location = new System.Drawing.Point(92, 193);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 8;
+            this.btnEdit.Text = "&Edit";
             // 
-            // simpleButton3
+            // btnDelete
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(173, 193);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton3.TabIndex = 8;
-            this.simpleButton3.Text = "&Delete";
+            this.btnDelete.Location = new System.Drawing.Point(173, 193);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "&Delete";
             // 
             // FrmManageBillItems
             // 
@@ -165,9 +165,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 343);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -194,8 +194,8 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.TextEdit txtAmount;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
+        private DevExpress.XtraEditors.SimpleButton btnEdit;
+        private DevExpress.XtraEditors.SimpleButton btnDelete;
     }
 }
