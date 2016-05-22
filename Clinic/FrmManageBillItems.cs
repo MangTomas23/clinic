@@ -15,6 +15,7 @@ namespace Clinic
     public partial class FrmManageBillItems : Form
     {
         private IMongoCollection<BsonDocument> collection;
+        private Boolean editMode;
 
         public FrmManageBillItems()
         {
@@ -54,13 +55,27 @@ namespace Clinic
                 return;
             }
 
-            var document = new BsonDocument
+            if (!editMode)
             {
-                {"item", txtItem.Text },
-                {"amount", txtAmount.Text }
-            };
+                var document = new BsonDocument
+                {
+                    {"item", txtItem.Text },
+                    {"amount", txtAmount.Text }
+                };
 
-            collection.InsertOne(document);
+                collection.InsertOne(document);
+            }
+            else
+            {
+                ObjectId id = ObjectId.Parse(dgv.SelectedRows[0].Cells[0].Value.ToString());
+                FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("_id", id);
+                UpdateDefinition<BsonDocument> update = Builders<BsonDocument>.Update
+                    .Set("item", txtItem.Text)
+                    .Set("amount", txtAmount.Text);
+
+                collection.UpdateOne(filter, update);
+                editMode = false;
+            }
 
             txtItem.Text = "";
             txtAmount.Text = "";
@@ -82,6 +97,17 @@ namespace Clinic
             FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             collection.DeleteOne(filter);
             loadItems();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            txtItem.ReadOnly = false;
+            txtAmount.ReadOnly = false;
+            txtItem.Text = dgv.SelectedRows[0].Cells[1].Value.ToString();
+            txtAmount.Text = dgv.SelectedRows[0].Cells[2].Value.ToString();
+            txtItem.Focus();
+            btnSave.Enabled = true;
+            editMode = true;
         }
     }
 }
