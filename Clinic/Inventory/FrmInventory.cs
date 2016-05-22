@@ -29,7 +29,7 @@ namespace Clinic.Inventory
             new FrmAddItem().ShowDialog();
         }
 
-        private void loadInventory()
+        public void loadInventory()
         {
             dgv.Rows.Clear();
 
@@ -64,7 +64,7 @@ namespace Clinic.Inventory
         private void btnEdit_Click(object sender, EventArgs e)
         {
             string id = dgv.SelectedRows[0].Cells[0].Value.ToString();
-            new FrmEditItem(id).ShowDialog();
+            new FrmEditItem(id, this).ShowDialog();
         }
     }
 }
