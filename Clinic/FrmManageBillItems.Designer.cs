@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.txtItem = new DevExpress.XtraEditors.TextEdit();
@@ -41,6 +39,9 @@
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).BeginInit();
@@ -55,6 +56,7 @@
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column3,
             this.Column1,
             this.Column2});
             this.dgv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -65,19 +67,6 @@
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(598, 175);
             this.dgv.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Item";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column2.HeaderText = "Amount";
-            this.Column2.Name = "Column2";
             // 
             // label2
             // 
@@ -161,6 +150,25 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "&Delete";
             // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "id";
+            this.Column3.Name = "Column3";
+            this.Column3.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Item";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column2.HeaderText = "Amount";
+            this.Column2.Name = "Column2";
+            // 
             // FrmManageBillItems
             // 
             this.AcceptButton = this.btnSave;
@@ -188,8 +196,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.TextEdit txtItem;
@@ -199,5 +205,8 @@
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

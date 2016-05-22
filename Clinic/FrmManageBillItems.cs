@@ -20,6 +20,23 @@ namespace Clinic
         {
             InitializeComponent();
             collection = MainForm.database.GetCollection<BsonDocument>("bill_items");
+            loadItems();
+        }
+
+        private void loadItems()
+        {
+            dgv.Rows.Clear();
+
+            var result = collection.Find(new BsonDocument()).ToList();
+
+            int i;
+            foreach (var r in result)
+            {
+                i = dgv.Rows.Add();
+                dgv[0, i].Value = r["_id"];
+                dgv[1, i].Value = r["item"];
+                dgv[2, i].Value = r["amount"];
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
