@@ -64,6 +64,7 @@ namespace Clinic
 
             txtItem.Text = "";
             txtAmount.Text = "";
+            btnSave.Enabled = false;
             loadItems();
         }
     }
