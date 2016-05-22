@@ -22,6 +22,7 @@ namespace Clinic
             InitializeComponent();
             this.id = id;
             this.frmPayment = frmPayment;
+            loadItems();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -123,6 +124,17 @@ namespace Clinic
         private void btnManage_Click(object sender, EventArgs e)
         {
             new FrmManageBillItems().ShowDialog();
+        }
+
+        public void loadItems()
+        {
+            var collection = MainForm.database.GetCollection<BsonDocument>("bill_items");
+            var result = collection.Find(new BsonDocument()).ToList();
+
+            foreach(var r in result)
+            {
+                cbItem.Properties.Items.Add(r["item"]);
+            }
         }
     }
 }
