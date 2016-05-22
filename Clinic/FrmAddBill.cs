@@ -119,5 +119,10 @@ namespace Clinic
             this.Hide();
             frmPayment.fillBillList();
         }
+
+        private void btnManage_Click(object sender, EventArgs e)
+        {
+            new FrmManageBillItems().ShowDialog();
+        }
     }
 }
