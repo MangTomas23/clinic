@@ -17,6 +17,8 @@ namespace Clinic
     {
         private string id;
         private FrmPayment frmPayment;
+        private List<BsonDocument> cbItems;
+
         public FrmAddBill(string id, FrmPayment frmPayment)
         {
             InitializeComponent();
@@ -129,12 +131,24 @@ namespace Clinic
         public void loadItems()
         {
             var collection = MainForm.database.GetCollection<BsonDocument>("bill_items");
-            var result = collection.Find(new BsonDocument()).ToList();
+            cbItems = collection.Find(new BsonDocument()).ToList();
 
-            foreach(var r in result)
+            foreach(var r in cbItems)
             {
                 cbItem.Properties.Items.Add(r["item"]);
             }
+        }
+
+        private void cbItem_EditValueChanged(object sender, EventArgs e)
+        {
+            foreach(var x in cbItems)
+            {
+                if(cbItem.Text == x["item"])
+                {
+                    txtAmount.Text = x["amount"].ToString();
+                }
+            }
+
         }
     }
 }
