@@ -44,6 +44,7 @@ namespace Clinic
         {
             txtItem.ReadOnly = false;
             txtAmount.ReadOnly = false;
+            txtItem.Focus();
             btnSave.Enabled = true;
         }
 
