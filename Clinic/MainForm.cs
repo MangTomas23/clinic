@@ -233,5 +233,24 @@ namespace Clinic
         {
             new Inventory.FrmInventory().ShowDialog();
         }
+
+        private void rbtnPrintInventory_Click(object sender, EventArgs e)
+        {
+            DataSet1 ds = new DataSet1();
+            DataRow r;
+
+            var collection = database.GetCollection<BsonDocument>("inventory");
+            var result = collection.Find(new BsonDocument()).ToList();
+
+            foreach(var res in result)
+            {
+                r = ds.dtInventory.NewRow();
+                r["item"] = res["item"];
+                r["quantity"] = res["quantity"];
+                ds.dtInventory.Rows.Add(r);
+            }
+
+            new Print.FrmPrintForm(ds, new Print.PrintInventory()).ShowDialog();
+        }
     }
 }
