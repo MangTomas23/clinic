@@ -67,6 +67,9 @@
             this.rbtnReferral = new System.Windows.Forms.RibbonButton();
             this.rbtnConsent = new System.Windows.Forms.RibbonButton();
             this.rbtnPayment = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
+            this.rbtnManageInventory = new System.Windows.Forms.RibbonButton();
+            this.rbtnPrintInventory = new System.Windows.Forms.RibbonButton();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
             this.rbtnBackup = new System.Windows.Forms.RibbonButton();
@@ -77,14 +80,14 @@
             this.rbtnChangePassword = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
             this.rbtnSystemUsers = new System.Windows.Forms.RibbonButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dashboardBarController1 = new DevExpress.DashboardWin.Bars.DashboardBarController();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardBarController1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -376,14 +379,15 @@
             // 
             this.ribbonTab1.Panels.Add(this.ribbonPanel1);
             this.ribbonTab1.Panels.Add(this.ribbonPanel2);
-            this.ribbonTab1.Text = "Patient";
+            this.ribbonTab1.Panels.Add(this.ribbonPanel6);
+            this.ribbonTab1.Text = "Home";
             // 
             // ribbonPanel1
             // 
             this.ribbonPanel1.Items.Add(this.rbtnNew);
             this.ribbonPanel1.Items.Add(this.rbtnEdit);
             this.ribbonPanel1.Items.Add(this.rbtnDelete);
-            this.ribbonPanel1.Text = "Options";
+            this.ribbonPanel1.Text = "Patient";
             // 
             // rbtnNew
             // 
@@ -449,6 +453,26 @@
             this.rbtnPayment.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnPayment.SmallImage")));
             this.rbtnPayment.Text = "Payment";
             this.rbtnPayment.Click += new System.EventHandler(this.btnPayment_Click);
+            // 
+            // ribbonPanel6
+            // 
+            this.ribbonPanel6.Items.Add(this.rbtnManageInventory);
+            this.ribbonPanel6.Items.Add(this.rbtnPrintInventory);
+            this.ribbonPanel6.Text = "Inventory";
+            // 
+            // rbtnManageInventory
+            // 
+            this.rbtnManageInventory.Image = ((System.Drawing.Image)(resources.GetObject("rbtnManageInventory.Image")));
+            this.rbtnManageInventory.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnManageInventory.SmallImage")));
+            this.rbtnManageInventory.Text = "Manage Inventory";
+            this.rbtnManageInventory.Click += new System.EventHandler(this.rbtnManageInventory_Click);
+            // 
+            // rbtnPrintInventory
+            // 
+            this.rbtnPrintInventory.Image = ((System.Drawing.Image)(resources.GetObject("rbtnPrintInventory.Image")));
+            this.rbtnPrintInventory.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnPrintInventory.SmallImage")));
+            this.rbtnPrintInventory.Text = "Print Inventory";
+            this.rbtnPrintInventory.Click += new System.EventHandler(this.rbtnPrintInventory_Click);
             // 
             // ribbonTab2
             // 
@@ -541,8 +565,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardBarController1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -598,5 +622,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblNationality;
+        private System.Windows.Forms.RibbonPanel ribbonPanel6;
+        private System.Windows.Forms.RibbonButton rbtnManageInventory;
+        private System.Windows.Forms.RibbonButton rbtnPrintInventory;
     }
 }

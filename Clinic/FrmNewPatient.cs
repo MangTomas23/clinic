@@ -110,7 +110,7 @@ namespace Clinic
                     {"middlename", txtMiddlename.Text },
                     {"lastname", txtLastname.Text },
                     {"sex", cboSex.SelectedItem.ToString() },
-                    {"birthdate", dtpBirthdate.Value},
+                    {"birthdate", dtpBirthdate.Value },
                     {"age", txtAge.Text },
                     {"birthplace", txtBirthplace.Text },
                     {"civil_status", cboCivilStatus.SelectedItem.ToString()},
@@ -139,12 +139,18 @@ namespace Clinic
                     }}
                 };
 
+                if(txtFirstname.Text.Trim() == "" || txtMiddlename.Text.Trim() == "" || txtLastname.Text.Trim() == "")
+                {
+                    throw new NullReferenceException();
+                }
+
                 collection.InsertOne(document);
                 this.Hide();
             }
-            catch (Exception ex)
+            catch (NullReferenceException ex)
             {
-                MessageBox.Show("Please complete the form.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please fill up all the required fields. \n\n Fields mark with (*) are required.", "Warning", MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
                 Console.WriteLine(ex.ToString());
             }
         }
@@ -207,5 +213,5 @@ namespace Clinic
         {
             this.Hide();
         }
-    }
+       }
 }

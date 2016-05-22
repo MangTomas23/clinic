@@ -169,6 +169,12 @@
     <Compile Include="FrmHistoryRecord.Designer.cs">
       <DependentUpon>FrmHistoryRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmManageBillItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManageBillItems.Designer.cs">
+      <DependentUpon>FrmManageBillItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,30 @@
     </Compile>
     <Compile Include="FrmUsers.Designer.cs">
       <DependentUpon>FrmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\FrmAddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\FrmAddItem.Designer.cs">
+      <DependentUpon>FrmAddItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\FrmEditItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\FrmEditItem.Designer.cs">
+      <DependentUpon>FrmEditItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\FrmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\FrmInventory.Designer.cs">
+      <DependentUpon>FrmInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\FrmQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\FrmQuantity.Designer.cs">
+      <DependentUpon>FrmQuantity.cs</DependentUpon>
     </Compile>
     <Compile Include="Print\Bill.cs">
       <AutoGen>True</AutoGen>
@@ -209,6 +239,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HistoryReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Print\PrintInventory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintInventory.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Print\PrintPatient.cs">
@@ -275,11 +311,26 @@
     <EmbeddedResource Include="FrmHistoryRecord.resx">
       <DependentUpon>FrmHistoryRecord.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmManageBillItems.resx">
+      <DependentUpon>FrmManageBillItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmProfile.resx">
       <DependentUpon>FrmProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsers.resx">
       <DependentUpon>FrmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\FrmAddItem.resx">
+      <DependentUpon>FrmAddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\FrmEditItem.resx">
+      <DependentUpon>FrmEditItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\FrmInventory.resx">
+      <DependentUpon>FrmInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\FrmQuantity.resx">
+      <DependentUpon>FrmQuantity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Print\Bill.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -298,6 +349,10 @@
     <EmbeddedResource Include="Print\HistoryReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>HistoryReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print\PrintInventory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintInventory.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Print\PrintPatient.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

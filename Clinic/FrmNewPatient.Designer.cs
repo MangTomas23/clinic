@@ -391,9 +391,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 9;
-            this.label2.Text = "First Name";
+            this.label2.Text = "* First Name";
             // 
             // label23
             // 
@@ -476,9 +476,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(737, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 13);
+            this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 18;
-            this.label5.Text = "Sex";
+            this.label5.Text = "* Sex";
             // 
             // txtAge
             // 
@@ -494,9 +494,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(501, 17);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Last Name";
+            this.label4.Text = "* Last Name";
             // 
             // txtLastname
             // 
@@ -596,9 +596,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(639, 65);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.Size = new System.Drawing.Size(66, 13);
             this.label8.TabIndex = 32;
-            this.label8.Text = "Civil Status";
+            this.label8.Text = "* Civil Status";
             // 
             // label6
             // 
@@ -614,9 +614,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(256, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 34;
-            this.label3.Text = "Middle Name";
+            this.label3.Text = "* Middle Name";
             // 
             // label10
             // 

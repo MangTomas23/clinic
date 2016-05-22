@@ -17,11 +17,14 @@ namespace Clinic
     {
         private string id;
         private FrmPayment frmPayment;
+        private List<BsonDocument> cbItems;
+
         public FrmAddBill(string id, FrmPayment frmPayment)
         {
             InitializeComponent();
             this.id = id;
             this.frmPayment = frmPayment;
+            loadItems();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -39,11 +42,11 @@ namespace Clinic
 
             int i = dv1.Rows.Add();
             dv1[1, i].Value = amount;
-            dv1[0, i].Value = txtItem.Text;
+            dv1[0, i].Value = cbItem.Text;
 
-            txtItem.Focus();
-            txtItem.Clear();
-            txtAmount.Clear();
+            cbItem.Focus();
+            cbItem.Text = "";
+            txtAmount.Text = "";
 
             computeTotal();
         }
@@ -118,6 +121,34 @@ namespace Clinic
             MessageBox.Show("Record saved successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Hide();
             frmPayment.fillBillList();
+        }
+
+        private void btnManage_Click(object sender, EventArgs e)
+        {
+            new FrmManageBillItems().ShowDialog();
+        }
+
+        public void loadItems()
+        {
+            var collection = MainForm.database.GetCollection<BsonDocument>("bill_items");
+            cbItems = collection.Find(new BsonDocument()).ToList();
+
+            foreach(var r in cbItems)
+            {
+                cbItem.Properties.Items.Add(r["item"]);
+            }
+        }
+
+        private void cbItem_EditValueChanged(object sender, EventArgs e)
+        {
+            foreach(var x in cbItems)
+            {
+                if(cbItem.Text == x["item"])
+                {
+                    txtAmount.Text = x["amount"].ToString();
+                }
+            }
+
         }
     }
 }
