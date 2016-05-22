@@ -16,13 +16,15 @@ namespace Clinic.Inventory
     {
         private string id;
         private IMongoCollection<BsonDocument> collection;
+        private FilterDefinition<BsonDocument> filter;
         
         public FrmEditItem(string id)
         {
             InitializeComponent();
             this.id = id;
             collection = MainForm.database.GetCollection<BsonDocument>("inventory");
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(id));
+            filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(id));
+
             var result = collection.Find(filter).First();
 
             txtItem.Text = result["item"].ToString();
@@ -31,7 +33,12 @@ namespace Clinic.Inventory
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            var update = Builders<BsonDocument>.Update
+                .Set("item", txtItem.Text)
+                .Set("quantity", txtQuantity.Text);
 
+            collection.UpdateOne(filter, update);
+            this.Hide();
         }
     }
 }
