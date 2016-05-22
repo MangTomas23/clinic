@@ -50,6 +50,13 @@ namespace Clinic.Inventory
             var id = ObjectId.Parse(dgv.SelectedRows[0].Cells[0].Value.ToString());
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
 
+            DialogResult confirm = MessageBox.Show("Are you sure you want to delete this item?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if(confirm.Equals(DialogResult.No))
+            {
+                return;
+            }
+
             collection.DeleteOne(filter);
             loadInventory();
         }
