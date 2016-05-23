@@ -92,6 +92,8 @@ namespace Clinic
             }catch(System.Collections.Generic.KeyNotFoundException ex)
             {
                 Console.WriteLine(ex.ToString());
+                lblChange.Text = "";
+                txtAmountPaid.Text = "";
             }
         }
 
