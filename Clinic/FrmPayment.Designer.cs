@@ -46,11 +46,12 @@
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAmountPaid = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dvBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvItems)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAmountPaid.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dvBill
@@ -157,13 +158,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtAmountPaid);
             this.groupBox2.Controls.Add(this.btnPrint);
             this.groupBox2.Controls.Add(this.btnApply);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.dvItems);
             this.groupBox2.Controls.Add(this.lblChange);
             this.groupBox2.Controls.Add(this.lblTotal);
-            this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label45);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(241, 12);
@@ -226,12 +227,12 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // textBox1
+            // txtAmountPaid
             // 
-            this.textBox1.Location = new System.Drawing.Point(364, 199);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(91, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtAmountPaid.Location = new System.Drawing.Point(367, 199);
+            this.txtAmountPaid.Name = "txtAmountPaid";
+            this.txtAmountPaid.Size = new System.Drawing.Size(88, 20);
+            this.txtAmountPaid.TabIndex = 11;
             // 
             // FrmPayment
             // 
@@ -250,6 +251,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAmountPaid.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,6 +275,6 @@
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnNew;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
-        private System.Windows.Forms.TextBox textBox1;
+        private DevExpress.XtraEditors.TextEdit txtAmountPaid;
     }
 }
