@@ -90,6 +90,5 @@ namespace Clinic
             lblTotal.Text = string.Format("{0:n}", bill["total"]);
 
         }
-
     }
 }
