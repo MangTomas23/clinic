@@ -46,6 +46,7 @@
             this.txtAmount = new DevExpress.XtraEditors.TextEdit();
             this.cbItem = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbItem.Properties)).BeginInit();
@@ -141,6 +142,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAdd.Location = new System.Drawing.Point(663, 34);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(49, 23);
@@ -151,6 +153,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSave.Location = new System.Drawing.Point(393, 346);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(119, 23);
@@ -161,6 +164,7 @@
             // 
             // btnPrint
             // 
+            this.btnPrint.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnPrint.Location = new System.Drawing.Point(162, 12);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(119, 23);
@@ -171,6 +175,7 @@
             // 
             // btnManage
             // 
+            this.btnManage.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnManage.Location = new System.Drawing.Point(12, 12);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(144, 23);
@@ -209,11 +214,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add to list";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(261, 346);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(110, 23);
+            this.btnCancel.TabIndex = 103;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // FrmAddBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(748, 383);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnManage);
             this.Controls.Add(this.btnPrint);
@@ -255,5 +272,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
         private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
     }
 }
