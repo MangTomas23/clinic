@@ -85,8 +85,14 @@ namespace Clinic
             }
 
             lblTotal.Text = string.Format("{0:n}", bill["total"]);
-            lblChange.Text = bill["change"].ToString();
-            txtAmountPaid.Text = bill["paid"].ToString();
+            try
+            {
+                lblChange.Text = bill["change"].ToString();
+                txtAmountPaid.Text = bill["paid"].ToString();
+            }catch(System.Collections.Generic.KeyNotFoundException ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -159,8 +165,16 @@ namespace Clinic
 
             row = ds.dtReceipt.NewRow();
             row["total"] = r["bills"][selectedIndex]["total"];
-            row["amount_paid"] = r["bills"][selectedIndex]["paid"];
-            row["change"] = r["bills"][selectedIndex]["change"];
+            try
+            {
+                row["amount_paid"] = r["bills"][selectedIndex]["paid"];
+                row["change"] = r["bills"][selectedIndex]["change"];
+            }catch(System.Collections.Generic.KeyNotFoundException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                MessageBox.Show("Unpaid");
+                return;
+            }
             ds.dtReceipt.Rows.Add(row);
 
             new Print.FrmPrintForm(ds, new Print.PrintReceipt()).ShowDialog();
