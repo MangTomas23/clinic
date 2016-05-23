@@ -94,7 +94,16 @@ namespace Clinic
         private void btnApply_Click(object sender, EventArgs e)
         {
             double total = Convert.ToDouble(lblTotal.Text);
-            double paid = Convert.ToDouble(txtAmountPaid.Text);
+            double paid;
+            try
+            {
+                paid = Convert.ToDouble(txtAmountPaid.Text);
+            }catch(System.FormatException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                MessageBox.Show("Please enter a valid value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             double change = paid - total;
             lblChange.Text = string.Format("{0:n}", change);
             txtAmountPaid.Text = string.Format("{0:n}", Convert.ToDouble(txtAmountPaid.Text));
