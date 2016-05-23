@@ -90,5 +90,14 @@ namespace Clinic
         {
             new FrmAddBill(id, this).ShowDialog();
         }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            double total = Convert.ToDouble(lblTotal.Text);
+            double paid = Convert.ToDouble(txtAmountPaid.Text);
+            double change = paid - total;
+            lblChange.Text = string.Format("{0:n}", change);
+            txtAmountPaid.Text = string.Format("{0:n}", Convert.ToDouble(txtAmountPaid.Text));
+        }
     }
 }

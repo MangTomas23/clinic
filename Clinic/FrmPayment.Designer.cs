@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dvBill = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -171,6 +171,7 @@
             this.btnApply.Size = new System.Drawing.Size(42, 23);
             this.btnApply.TabIndex = 9;
             this.btnApply.Text = "Apply";
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // label1
             // 
@@ -186,10 +187,10 @@
             this.lblChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChange.Location = new System.Drawing.Point(364, 225);
             this.lblChange.Name = "lblChange";
-            this.lblChange.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblChange.Size = new System.Drawing.Size(91, 13);
             this.lblChange.TabIndex = 3;
             this.lblChange.Text = "0.00";
+            this.lblChange.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // btnPrint
             // 
@@ -224,7 +225,6 @@
             this.txtAmountPaid.Properties.Appearance.Options.UseTextOptions = true;
             this.txtAmountPaid.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtAmountPaid.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.txtAmountPaid.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtAmountPaid.Size = new System.Drawing.Size(88, 20);
             this.txtAmountPaid.TabIndex = 11;
             // 
@@ -236,8 +236,8 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn2.HeaderText = "Amount";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
