@@ -124,5 +124,38 @@ namespace Clinic
             dvBill.ClearSelection();
             dvBill.Rows[selectedRowIndex].Selected = true;
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            ObjectId id = ObjectId.Parse(dvBill.SelectedRows[0].Cells[2].Value.ToString());
+            FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("bills._id", id);
+            BsonDocument r = collection.Find(filter).First();
+            int selectedIndex = dvBill.CurrentRow.Index;
+
+            DataSet1 ds = new DataSet1();
+            DataRow row;
+            var items = r["bills"][selectedIndex]["items"].AsBsonArray;
+
+            row = ds.dtReceipt.NewRow();
+            row["patient_name"] = string.Format("{0} {1} {2}", r["firstname"].ToString(), 
+                r["middlename"].ToString(), r["lastname"].ToString());
+            ds.dtReceipt.Rows.Add(row);
+
+            foreach (var item in items)
+            {
+                row = ds.dtReceipt.NewRow();
+                row["item"] = item["name"];
+                row["amount"] = item["amount"];
+                ds.dtReceipt.Rows.Add(row);
+            }
+
+            row = ds.dtReceipt.NewRow();
+            row["total"] = r["bills"][selectedIndex]["total"];
+            row["amount_paid"] = r["bills"][selectedIndex]["paid"];
+            row["change"] = r["bills"][selectedIndex]["change"];
+            ds.dtReceipt.Rows.Add(row);
+
+            new Print.FrmPrintForm(ds, new Print.PrintReceipt()).ShowDialog();
+        }
     }
 }
