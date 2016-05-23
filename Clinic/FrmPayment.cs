@@ -66,9 +66,11 @@ namespace Clinic
         {
             dvItems.Rows.Clear();
             var bill = bills[0];
-            try {
+            try
+            {
                 bill = bills[dvBill.SelectedRows[0].Index];
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 bill = bills[0];
             }
@@ -83,7 +85,8 @@ namespace Clinic
             }
 
             lblTotal.Text = string.Format("{0:n}", bill["total"]);
-
+            lblChange.Text = bill["change"].ToString();
+            txtAmountPaid.Text = bill["paid"].ToString();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -115,6 +118,11 @@ namespace Clinic
                 .Set("bills.$.change", lblChange.Text);
 
             collection.UpdateOne(filter, update);
+
+            int selectedRowIndex = dvBill.SelectedRows[0].Index;
+            fillBillList();
+            dvBill.ClearSelection();
+            dvBill.Rows[selectedRowIndex].Selected = true;
         }
     }
 }
