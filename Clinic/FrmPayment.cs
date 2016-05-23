@@ -137,8 +137,16 @@ namespace Clinic
             var items = r["bills"][selectedIndex]["items"].AsBsonArray;
 
             row = ds.dtReceipt.NewRow();
-            row["patient_name"] = string.Format("{0} {1} {2}", r["firstname"].ToString(), 
+            row["patient_name"] = string.Format("{0} {1} {2}", r["firstname"].ToString(),
                 r["middlename"].ToString(), r["lastname"].ToString());
+            try
+            {
+                row["address"] = r["address"];
+            }catch(System.Collections.Generic.KeyNotFoundException ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
             ds.dtReceipt.Rows.Add(row);
 
             foreach (var item in items)

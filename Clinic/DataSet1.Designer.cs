@@ -2160,6 +2160,8 @@ namespace Clinic {
             
             private global::System.Data.DataColumn columnpatient_name;
             
+            private global::System.Data.DataColumn columnaddress;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtReceiptDataTable() {
@@ -2243,6 +2245,14 @@ namespace Clinic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn addressColumn {
+                get {
+                    return this.columnaddress;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2278,7 +2288,7 @@ namespace Clinic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtReceiptRow AdddtReceiptRow(string item, string amount, string total, string amount_paid, string change, string patient_name) {
+            public dtReceiptRow AdddtReceiptRow(string item, string amount, string total, string amount_paid, string change, string patient_name, string address) {
                 dtReceiptRow rowdtReceiptRow = ((dtReceiptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         item,
@@ -2286,7 +2296,8 @@ namespace Clinic {
                         total,
                         amount_paid,
                         change,
-                        patient_name};
+                        patient_name,
+                        address};
                 rowdtReceiptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtReceiptRow);
                 return rowdtReceiptRow;
@@ -2315,6 +2326,7 @@ namespace Clinic {
                 this.columnamount_paid = base.Columns["amount_paid"];
                 this.columnchange = base.Columns["change"];
                 this.columnpatient_name = base.Columns["patient_name"];
+                this.columnaddress = base.Columns["address"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2332,6 +2344,8 @@ namespace Clinic {
                 base.Columns.Add(this.columnchange);
                 this.columnpatient_name = new global::System.Data.DataColumn("patient_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpatient_name);
+                this.columnaddress = new global::System.Data.DataColumn("address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaddress);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3653,6 +3667,22 @@ namespace Clinic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string address {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtReceipt.addressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'address\' in table \'dtReceipt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtReceipt.addressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsitemNull() {
                 return this.IsNull(this.tabledtReceipt.itemColumn);
             }
@@ -3721,6 +3751,18 @@ namespace Clinic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setpatient_nameNull() {
                 this[this.tabledtReceipt.patient_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsaddressNull() {
+                return this.IsNull(this.tabledtReceipt.addressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetaddressNull() {
+                this[this.tabledtReceipt.addressColumn] = global::System.Convert.DBNull;
             }
         }
         
