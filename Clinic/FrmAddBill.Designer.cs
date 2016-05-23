@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dv1 = new System.Windows.Forms.DataGridView();
@@ -73,7 +73,6 @@
             // dv1
             // 
             this.dv1.AllowUserToAddRows = false;
-            this.dv1.AllowUserToDeleteRows = false;
             this.dv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colItem,
@@ -88,18 +87,18 @@
             // 
             // colItem
             // 
-            dataGridViewCellStyle7.NullValue = null;
-            this.colItem.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle9.NullValue = null;
+            this.colItem.DefaultCellStyle = dataGridViewCellStyle9;
             this.colItem.HeaderText = "Item";
             this.colItem.Name = "colItem";
             this.colItem.Width = 540;
             // 
             // colAmount
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.colAmount.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "N2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.colAmount.DefaultCellStyle = dataGridViewCellStyle10;
             this.colAmount.HeaderText = "Amount";
             this.colAmount.Name = "colAmount";
             this.colAmount.Width = 180;
