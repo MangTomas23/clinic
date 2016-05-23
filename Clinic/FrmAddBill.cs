@@ -159,6 +159,16 @@ namespace Clinic
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            if (dv1.RowCount != 0)
+            {
+                DialogResult confirmation = MessageBox.Show("List haven't saved yet. Are you sure you want cancel?",
+                    "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if(confirmation.Equals(DialogResult.No))
+                {
+                    return;
+                }
+            }
             this.Hide();
         }
     }
