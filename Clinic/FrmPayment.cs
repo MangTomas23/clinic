@@ -25,12 +25,7 @@ namespace Clinic
             collection = MainForm.database.GetCollection<BsonDocument>("patients");
             fillBillList();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new FrmAddBill(id, this).ShowDialog();
-        }
-
+        
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to delete this record?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -89,6 +84,11 @@ namespace Clinic
 
             lblTotal.Text = string.Format("{0:n}", bill["total"]);
 
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            new FrmAddBill(id, this).ShowDialog();
         }
     }
 }
