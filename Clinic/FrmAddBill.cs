@@ -99,7 +99,7 @@ namespace Clinic
 
             BsonArray items = new BsonArray();
             
-            for(int x = 0; x < dv1.Rows.Count -1; x++)
+            for(int x = 0; x < dv1.Rows.Count; x++)
             {
                 items.Add(new BsonDocument {
                     {"name", dv1.Rows[x].Cells[0].Value.ToString()},
