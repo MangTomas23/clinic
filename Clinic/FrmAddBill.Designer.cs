@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dv1 = new System.Windows.Forms.DataGridView();
@@ -39,14 +39,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.btnManage = new DevExpress.XtraEditors.SimpleButton();
             this.txtAmount = new DevExpress.XtraEditors.TextEdit();
             this.cbItem = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.btnManage = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbItem.Properties)).BeginInit();
@@ -87,18 +87,18 @@
             // 
             // colItem
             // 
-            dataGridViewCellStyle9.NullValue = null;
-            this.colItem.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.NullValue = null;
+            this.colItem.DefaultCellStyle = dataGridViewCellStyle3;
             this.colItem.HeaderText = "Item";
             this.colItem.Name = "colItem";
             this.colItem.Width = 540;
             // 
             // colAmount
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.colAmount.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.colAmount.DefaultCellStyle = dataGridViewCellStyle4;
             this.colAmount.HeaderText = "Amount";
             this.colAmount.Name = "colAmount";
             this.colAmount.Width = 180;
@@ -139,16 +139,6 @@
             this.txtTotal.Size = new System.Drawing.Size(181, 20);
             this.txtTotal.TabIndex = 6;
             // 
-            // btnManage
-            // 
-            this.btnManage.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnManage.Location = new System.Drawing.Point(12, 12);
-            this.btnManage.Name = "btnManage";
-            this.btnManage.Size = new System.Drawing.Size(144, 23);
-            this.btnManage.TabIndex = 101;
-            this.btnManage.Text = "Manage Items && Amount";
-            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
-            // 
             // txtAmount
             // 
             this.txtAmount.Location = new System.Drawing.Point(481, 37);
@@ -180,58 +170,63 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add to list";
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(377, 346);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(110, 23);
+            this.btnSave.TabIndex = 104;
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnManage
+            // 
+            this.btnManage.Location = new System.Drawing.Point(12, 9);
+            this.btnManage.Name = "btnManage";
+            this.btnManage.Size = new System.Drawing.Size(144, 23);
+            this.btnManage.TabIndex = 105;
+            this.btnManage.Text = "Manage Items && Amount";
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(162, 9);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 23);
+            this.btnPrint.TabIndex = 106;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(261, 346);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(110, 23);
-            this.btnCancel.TabIndex = 103;
+            this.btnCancel.TabIndex = 107;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnSave
-            // 
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSave.Location = new System.Drawing.Point(377, 346);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(110, 23);
-            this.btnSave.TabIndex = 103;
-            this.btnSave.Text = "Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // btnAdd
             // 
-            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAdd.Location = new System.Drawing.Point(660, 35);
+            this.btnAdd.Location = new System.Drawing.Point(660, 34);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(58, 23);
-            this.btnAdd.TabIndex = 103;
+            this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnPrint
-            // 
-            this.btnPrint.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnPrint.Location = new System.Drawing.Point(162, 12);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(110, 23);
-            this.btnPrint.TabIndex = 103;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // FrmAddBill
             // 
-            this.AcceptButton = this.btnAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(748, 383);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnManage);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.dv1);
@@ -261,15 +256,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTotal;
-        private DevExpress.XtraEditors.SimpleButton btnManage;
         private DevExpress.XtraEditors.TextEdit txtAmount;
         private DevExpress.XtraEditors.ComboBoxEdit cbItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
         private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
+        private DevExpress.XtraEditors.SimpleButton btnManage;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
-        private DevExpress.XtraEditors.SimpleButton btnSave;
-        private DevExpress.XtraEditors.SimpleButton btnPrint;
     }
 }
