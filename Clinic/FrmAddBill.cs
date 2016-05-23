@@ -141,6 +141,12 @@ namespace Clinic
 
         private void cbItem_EditValueChanged(object sender, EventArgs e)
         {
+            if(cbItem.Text == "")
+            {
+                txtAmount.Text = "";
+                return;
+            }
+
             foreach(var x in cbItems)
             {
                 if(cbItem.Text == x["item"])
