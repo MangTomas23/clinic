@@ -107,6 +107,14 @@ namespace Clinic
             double change = paid - total;
             lblChange.Text = string.Format("{0:n}", change);
             txtAmountPaid.Text = string.Format("{0:n}", Convert.ToDouble(txtAmountPaid.Text));
+
+            ObjectId id = ObjectId.Parse(dvBill.SelectedRows[0].Cells[2].Value.ToString());
+            FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("bills._id", id);
+            UpdateDefinition<BsonDocument> update = Builders<BsonDocument>.Update
+                .Set("bills.$.paid", txtAmountPaid.Text)
+                .Set("bills.$.change", lblChange.Text);
+
+            collection.UpdateOne(filter, update);
         }
     }
 }
