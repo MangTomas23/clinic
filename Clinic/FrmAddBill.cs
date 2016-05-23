@@ -94,6 +94,12 @@ namespace Clinic
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if(dv1.RowCount == 0)
+            {
+                MessageBox.Show("List is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             var collection = MainForm.database.GetCollection<BsonDocument>("patients");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(id));
 
