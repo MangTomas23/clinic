@@ -42,7 +42,8 @@ namespace Clinic
             dv.Rows.Clear();
             
             var builder = Builders<BsonDocument>.Filter;
-            var filter = builder.Regex("firstname", new BsonRegularExpression(txtSearch.Text));
+            var filter = builder.Or(builder.Regex("firstname", new BsonRegularExpression(txtSearch.Text)),
+                builder.Regex("lastname", new BsonRegularExpression(txtSearch.Text)));
             var result = collection.Find(filter).ToList();
 
             int i;

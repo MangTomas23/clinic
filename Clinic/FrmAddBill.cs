@@ -94,16 +94,22 @@ namespace Clinic
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if(dv1.RowCount == 0)
+            {
+                MessageBox.Show("List is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             var collection = MainForm.database.GetCollection<BsonDocument>("patients");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(id));
 
             BsonArray items = new BsonArray();
             
-            for(int x = 0; x < dv1.Rows.Count -1; x++)
+            for(int x = 0; x < dv1.Rows.Count; x++)
             {
                 items.Add(new BsonDocument {
                     {"name", dv1.Rows[x].Cells[0].Value.ToString()},
-                    {"amount", Convert.ToDouble(dv1.Rows[x].Cells[1].Value)}
+                    {"amount", string.Format("{0:n}", Convert.ToDouble(dv1.Rows[x].Cells[1].Value))}
                 });
             }
 
@@ -125,14 +131,14 @@ namespace Clinic
 
         private void btnManage_Click(object sender, EventArgs e)
         {
-            new FrmManageBillItems().ShowDialog();
+            new FrmManageBillItems(this).ShowDialog();
         }
 
         public void loadItems()
         {
             var collection = MainForm.database.GetCollection<BsonDocument>("bill_items");
             cbItems = collection.Find(new BsonDocument()).ToList();
-
+            cbItem.Properties.Items.Clear();
             foreach(var r in cbItems)
             {
                 cbItem.Properties.Items.Add(r["item"]);
@@ -141,6 +147,12 @@ namespace Clinic
 
         private void cbItem_EditValueChanged(object sender, EventArgs e)
         {
+            if(cbItem.Text == "")
+            {
+                txtAmount.Text = "";
+                return;
+            }
+
             foreach(var x in cbItems)
             {
                 if(cbItem.Text == x["item"])
@@ -149,6 +161,21 @@ namespace Clinic
                 }
             }
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (dv1.RowCount != 0)
+            {
+                DialogResult confirmation = MessageBox.Show("List haven't saved yet. Are you sure you want cancel?",
+                    "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if(confirmation.Equals(DialogResult.No))
+                {
+                    return;
+                }
+            }
+            this.Hide();
         }
     }
 }

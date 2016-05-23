@@ -297,6 +297,12 @@
     <Compile Include="Print\FrmPrintDataSheet.Designer.cs">
       <DependentUpon>FrmPrintDataSheet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Print\PrintReceipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintReceipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Print\ReferralSheet.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -375,6 +381,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Print\FrmPrintDataSheet.resx">
       <DependentUpon>FrmPrintDataSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print\PrintReceipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintReceipt.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Print\ReferralSheet.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

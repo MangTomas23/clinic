@@ -25,12 +25,7 @@ namespace Clinic
             collection = MainForm.database.GetCollection<BsonDocument>("patients");
             fillBillList();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new FrmAddBill(id, this).ShowDialog();
-        }
-
+        
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to delete this record?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -56,7 +51,7 @@ namespace Clinic
                 for (int i = 0; i < bills.Count; i++)
                 {
                     int x = dvBill.Rows.Add();
-                    dvBill[0, x].Value = bills[i]["date"];
+                    dvBill[0, x].Value = bills[i]["date"].ToUniversalTime().ToShortDateString();
                     dvBill[2, x].Value = bills[i]["_id"];
                     //dtBill[0, x].Value = bills["name"];
                 }
@@ -71,9 +66,11 @@ namespace Clinic
         {
             dvItems.Rows.Clear();
             var bill = bills[0];
-            try {
+            try
+            {
                 bill = bills[dvBill.SelectedRows[0].Index];
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 bill = bills[0];
             }
@@ -88,8 +85,101 @@ namespace Clinic
             }
 
             lblTotal.Text = string.Format("{0:n}", bill["total"]);
-
+            try
+            {
+                lblChange.Text = bill["change"].ToString();
+                txtAmountPaid.Text = bill["paid"].ToString();
+            }catch(System.Collections.Generic.KeyNotFoundException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                lblChange.Text = "";
+                txtAmountPaid.Text = "";
+            }
         }
 
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            new FrmAddBill(id, this).ShowDialog();
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            double total = Convert.ToDouble(lblTotal.Text);
+            double paid;
+            try
+            {
+                paid = Convert.ToDouble(txtAmountPaid.Text);
+            }catch(System.FormatException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                MessageBox.Show("Please enter a valid value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            double change = paid - total;
+            lblChange.Text = string.Format("{0:n}", change);
+            txtAmountPaid.Text = string.Format("{0:n}", Convert.ToDouble(txtAmountPaid.Text));
+
+            ObjectId id = ObjectId.Parse(dvBill.SelectedRows[0].Cells[2].Value.ToString());
+            FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("bills._id", id);
+            UpdateDefinition<BsonDocument> update = Builders<BsonDocument>.Update
+                .Set("bills.$.paid", txtAmountPaid.Text)
+                .Set("bills.$.change", lblChange.Text);
+
+            collection.UpdateOne(filter, update);
+
+            int selectedRowIndex = dvBill.SelectedRows[0].Index;
+            fillBillList();
+            dvBill.ClearSelection();
+            dvBill.Rows[selectedRowIndex].Selected = true;
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            ObjectId id = ObjectId.Parse(dvBill.SelectedRows[0].Cells[2].Value.ToString());
+            FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("bills._id", id);
+            BsonDocument r = collection.Find(filter).First();
+            int selectedIndex = dvBill.SelectedRows[0].Index;
+
+            DataSet1 ds = new DataSet1();
+            DataRow row;
+            var items = r["bills"][selectedIndex]["items"].AsBsonArray;
+
+            row = ds.dtReceipt.NewRow();
+            row["patient_name"] = string.Format("{0} {1} {2}", r["firstname"].ToString(),
+                r["middlename"].ToString(), r["lastname"].ToString());
+            try
+            {
+                row["address"] = r["address"];
+            }catch(System.Collections.Generic.KeyNotFoundException ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            ds.dtReceipt.Rows.Add(row);
+
+            foreach (var item in items)
+            {
+                row = ds.dtReceipt.NewRow();
+                row["item"] = item["name"];
+                row["amount"] = item["amount"];
+                ds.dtReceipt.Rows.Add(row);
+            }
+
+            row = ds.dtReceipt.NewRow();
+            row["total"] = r["bills"][selectedIndex]["total"];
+            try
+            {
+                row["amount_paid"] = r["bills"][selectedIndex]["paid"];
+                row["change"] = r["bills"][selectedIndex]["change"];
+            }catch(System.Collections.Generic.KeyNotFoundException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                MessageBox.Show("Unpaid");
+                return;
+            }
+            ds.dtReceipt.Rows.Add(row);
+
+            new Print.FrmPrintForm(ds, new Print.PrintReceipt()).ShowDialog();
+        }
     }
 }
