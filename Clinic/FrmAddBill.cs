@@ -109,7 +109,7 @@ namespace Clinic
             {
                 items.Add(new BsonDocument {
                     {"name", dv1.Rows[x].Cells[0].Value.ToString()},
-                    {"amount", Convert.ToDouble(dv1.Rows[x].Cells[1].Value)}
+                    {"amount", string.Format("{0:n}", Convert.ToDouble(dv1.Rows[x].Cells[1].Value))}
                 });
             }
 
