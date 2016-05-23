@@ -50,6 +50,7 @@
             this.ClientSize = new System.Drawing.Size(902, 451);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "FrmPrintForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Print Form";
             this.ResumeLayout(false);
 
