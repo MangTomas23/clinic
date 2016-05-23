@@ -51,7 +51,7 @@ namespace Clinic
                 for (int i = 0; i < bills.Count; i++)
                 {
                     int x = dvBill.Rows.Add();
-                    dvBill[0, x].Value = bills[i]["date"];
+                    dvBill[0, x].Value = bills[i]["date"].ToUniversalTime().ToShortDateString();
                     dvBill[2, x].Value = bills[i]["_id"];
                     //dtBill[0, x].Value = bills["name"];
                 }
