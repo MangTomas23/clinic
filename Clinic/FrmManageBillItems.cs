@@ -16,11 +16,13 @@ namespace Clinic
     {
         private IMongoCollection<BsonDocument> collection;
         private Boolean editMode;
+        private FrmAddBill frmAddBill;
 
-        public FrmManageBillItems()
+        public FrmManageBillItems(FrmAddBill frmAddBill)
         {
             InitializeComponent();
             collection = MainForm.database.GetCollection<BsonDocument>("bill_items");
+            this.frmAddBill = frmAddBill;
             loadItems();
         }
 
@@ -84,6 +86,7 @@ namespace Clinic
             txtAmount.ReadOnly = true;
             btnSave.Enabled = false;
             loadItems();
+            frmAddBill.loadItems();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -98,6 +101,7 @@ namespace Clinic
             FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             collection.DeleteOne(filter);
             loadItems();
+            frmAddBill.loadItems();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

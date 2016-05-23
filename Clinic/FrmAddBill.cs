@@ -131,14 +131,14 @@ namespace Clinic
 
         private void btnManage_Click(object sender, EventArgs e)
         {
-            new FrmManageBillItems().ShowDialog();
+            new FrmManageBillItems(this).ShowDialog();
         }
 
         public void loadItems()
         {
             var collection = MainForm.database.GetCollection<BsonDocument>("bill_items");
             cbItems = collection.Find(new BsonDocument()).ToList();
-
+            cbItem.Properties.Items.Clear();
             foreach(var r in cbItems)
             {
                 cbItem.Properties.Items.Add(r["item"]);
