@@ -138,7 +138,7 @@ namespace Clinic
             ObjectId id = ObjectId.Parse(dvBill.SelectedRows[0].Cells[2].Value.ToString());
             FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("bills._id", id);
             BsonDocument r = collection.Find(filter).First();
-            int selectedIndex = dvBill.CurrentRow.Index;
+            int selectedIndex = dvBill.SelectedRows[0].Index;
 
             DataSet1 ds = new DataSet1();
             DataRow row;
