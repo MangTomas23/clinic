@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dv1 = new System.Windows.Forms.DataGridView();
+            this.colItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,11 +45,11 @@
             this.btnManage = new DevExpress.XtraEditors.SimpleButton();
             this.txtAmount = new DevExpress.XtraEditors.TextEdit();
             this.cbItem = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.colItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbItem.Properties)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtpDate
@@ -83,10 +85,28 @@
             this.dv1.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dv1_CellStateChanged);
             this.dv1.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dv1_RowStateChanged);
             // 
+            // colItem
+            // 
+            dataGridViewCellStyle1.NullValue = null;
+            this.colItem.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colItem.HeaderText = "Item";
+            this.colItem.Name = "colItem";
+            this.colItem.Width = 540;
+            // 
+            // colAmount
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colAmount.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colAmount.HeaderText = "Amount";
+            this.colAmount.Name = "colAmount";
+            this.colAmount.Width = 180;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 286);
+            this.label2.Location = new System.Drawing.Point(6, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 3;
@@ -95,7 +115,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(506, 286);
+            this.label3.Location = new System.Drawing.Point(479, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 5;
@@ -121,7 +141,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(687, 300);
+            this.btnAdd.Location = new System.Drawing.Point(663, 34);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(49, 23);
             this.btnAdd.TabIndex = 3;
@@ -131,7 +151,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(324, 336);
+            this.btnSave.Location = new System.Drawing.Point(393, 346);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(119, 23);
             this.btnSave.TabIndex = 9;
@@ -160,54 +180,46 @@
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(508, 303);
+            this.txtAmount.Location = new System.Drawing.Point(481, 37);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(173, 20);
             this.txtAmount.TabIndex = 2;
             // 
             // cbItem
             // 
-            this.cbItem.Location = new System.Drawing.Point(7, 303);
+            this.cbItem.Location = new System.Drawing.Point(9, 37);
             this.cbItem.Name = "cbItem";
             this.cbItem.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbItem.Size = new System.Drawing.Size(489, 20);
+            this.cbItem.Size = new System.Drawing.Size(461, 20);
             this.cbItem.TabIndex = 1;
             this.cbItem.EditValueChanged += new System.EventHandler(this.cbItem_EditValueChanged);
             // 
-            // colItem
+            // groupBox1
             // 
-            dataGridViewCellStyle3.NullValue = null;
-            this.colItem.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colItem.HeaderText = "Item";
-            this.colItem.Name = "colItem";
-            this.colItem.Width = 540;
-            // 
-            // colAmount
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.colAmount.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colAmount.HeaderText = "Amount";
-            this.colAmount.Name = "colAmount";
-            this.colAmount.Width = 180;
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cbItem);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtAmount);
+            this.groupBox1.Controls.Add(this.btnAdd);
+            this.groupBox1.Location = new System.Drawing.Point(12, 272);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(724, 68);
+            this.groupBox1.TabIndex = 102;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Add to list";
             // 
             // FrmAddBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 371);
-            this.Controls.Add(this.cbItem);
-            this.Controls.Add(this.txtAmount);
+            this.ClientSize = new System.Drawing.Size(748, 383);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnManage);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTotal);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.dv1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpDate);
@@ -218,6 +230,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dv1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbItem.Properties)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +254,6 @@
         private DevExpress.XtraEditors.ComboBoxEdit cbItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
