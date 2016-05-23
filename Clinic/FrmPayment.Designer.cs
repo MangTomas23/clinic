@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dvBill = new System.Windows.Forms.DataGridView();
             this.dvItems = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,8 +98,8 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn2.HeaderText = "Amount";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
@@ -187,14 +187,14 @@
             this.txtAmountPaid.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtAmountPaid.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.txtAmountPaid.Size = new System.Drawing.Size(88, 20);
-            this.txtAmountPaid.TabIndex = 11;
+            this.txtAmountPaid.TabIndex = 1;
             // 
             // btnPrint
             // 
             this.btnPrint.Location = new System.Drawing.Point(364, 242);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(139, 23);
-            this.btnPrint.TabIndex = 10;
+            this.btnPrint.TabIndex = 3;
             this.btnPrint.Text = "Print Receipt";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -203,7 +203,7 @@
             this.btnApply.Location = new System.Drawing.Point(461, 197);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(42, 23);
-            this.btnApply.TabIndex = 9;
+            this.btnApply.TabIndex = 2;
             this.btnApply.Text = "Apply";
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
