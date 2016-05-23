@@ -63,7 +63,7 @@ namespace Clinic
                 var document = new BsonDocument
                 {
                     {"item", txtItem.Text },
-                    {"amount", txtAmount.Text }
+                    {"amount", string.Format("{0:n}", Convert.ToDouble(txtAmount.Text)) }
                 };
 
                 collection.InsertOne(document);
@@ -74,7 +74,7 @@ namespace Clinic
                 FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("_id", id);
                 UpdateDefinition<BsonDocument> update = Builders<BsonDocument>.Update
                     .Set("item", txtItem.Text)
-                    .Set("amount", txtAmount.Text);
+                    .Set("amount", string.Format("{0:n}", Convert.ToDouble(txtAmount.Text)));
 
                 collection.UpdateOne(filter, update);
                 editMode = false;
